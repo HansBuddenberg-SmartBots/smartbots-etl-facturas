@@ -1,0 +1,71 @@
+# ============================================================
+# Configuración ETL Consolidación de Facturas — Santa Elena
+# ============================================================
+
+# === Google APIs ===
+google:
+  credentials_path: "./credentials/credentials.json"
+  # Si se trabaja en Shared Drive, indicar el nombre. Vacío = My Drive.
+  shared_drive_name: ""
+  # Email del usuario a impersonar para Gmail API (domain-wide delegation)
+  delegated_user: "h.buddenberg@gmail.com"
+
+# === Rutas en Google Drive ===
+drive:
+  source_path: "Bot RPA/Tocornal/ETL Facturas"
+  in_process_folder: "En Proceso"          # Subcarpeta dentro de source_path
+  backup_path: "Respaldo"                  # Subcarpeta dentro de source_path
+  consolidated_path: "Consolidado"         # Ruta desde raíz de Drive
+  consolidated_filename: "consolidado.xlsx"
+
+# === Excel ===
+excel:
+  source_sheet: "Sheet1"
+  consolidated_sheet: "Consolidado"
+  expected_columns:
+    - "N° Factura"
+    - "N° Referencia"
+    - "Transportista"
+    - "Fecha Factura"
+    - "Descripción"
+    - "Monto Neto"
+    - "IVA"
+    - "Monto Total"
+    - "Moneda"
+  column_mapping:
+    "N° Factura": "invoice_number"
+    "N° Referencia": "reference_number"
+    "Transportista": "carrier_name"
+    "Fecha Factura": "invoice_date"
+    "Descripción": "description"
+    "Monto Neto": "net_amount"
+    "IVA": "tax_amount"
+    "Monto Total": "total_amount"
+    "Moneda": "currency"
+  date_format: "%d-%m-%Y"
+
+# === Email (Gmail API) ===
+email:
+  sender: "bot-rpa@santaelena.cl"
+  to:
+    - "operaciones@santaelena.cl"
+  cc:
+    - "supervisor@santaelena.cl"
+  bcc:
+    - "auditoria@santaelena.cl"
+  subject_prefix: "[Smartbots ETL]"
+  templates:
+    success: "ETL_Consolidacion_Exito.html"
+    partial: "ETL_Consolidacion_Parcial.html"
+    error: "ETL_Consolidacion_Error.html"
+    empty: "ETL_Consolidacion_Vacio.html"
+
+# === Tracking (SQLite) ===
+tracking:
+  db_path: "data/etl_tracking.db"
+
+# === Logging ===
+logging:
+  level: "INFO"
+  log_to_file: true
+  log_dir: "logs"

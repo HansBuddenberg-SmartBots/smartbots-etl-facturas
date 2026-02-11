@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+
+# Credentials (NEVER commit)
+credentials/
+*.json
+*.db
+
+# Logs
+logs/*.log
+logs/*.json
+
+# Temp files
+/tmp/
+*.xlsx.bak
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETL Consolidación - Sin Archivos</title>
+  <style>
+    body { margin: 0; padding: 0; background-color: #f4f4f4; font-family: Arial, sans-serif; }
+    table { border-spacing: 0; width: 100%; }
+    img { display: block; max-width: 100%; height: auto; }
+    .email-container { max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; }
+    .email-header { padding: 10px 0; text-align: center; background-color: #ffffff; border-bottom: 1px solid #e0e0e0; }
+    .email-header img { margin: 0 auto; display: inline-block; width: 100px; height: auto; }
+    .email-content { padding: 20px; color: #333333; line-height: 1.6; }
+    .email-footer { text-align: center; padding: 10px; background-color: #f9fafb; border-top: 1px solid #e0e0e0; font-size: 11px; color: #666666; }
+    .badge-info { display: inline-block; padding: 4px 12px; background-color: #d1ecf1; color: #0c5460; border-radius: 4px; font-weight: bold; }
+  </style>
+</head>
+
+<body>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color: #f4f4f4;">
+    <tr>
+      <td align="center">
+        <table class="email-container" cellpadding="0" cellspacing="0">
+          <!-- Header -->
+          <tr>
+            <td class="email-header">
+              <img src="https://smart-bots.cl/logo_santahelena.jpg" alt="Santa Elena">
+            </td>
+          </tr>
+
+          <!-- Content -->
+          <tr>
+            <td class="email-content">
+              <p>Estimados,</p>
+              <p>La ejecución del ETL de consolidación finalizó con estado <span class="badge-info">sin archivos</span>.</p>
+
+              <p><strong>Ejecución:</strong> {run_id}<br>
+              <strong>Fecha:</strong> {timestamp}</p>
+
+              <p>No se encontraron archivos XLSX nuevos para procesar en la carpeta de origen. Esto puede significar que todos los archivos ya fueron procesados previamente.</p>
+
+              <p>No se requiere acción adicional.</p>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td class="email-footer">
+              <p>&copy; 2025 Exportadora Santa Elena S.A.</p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

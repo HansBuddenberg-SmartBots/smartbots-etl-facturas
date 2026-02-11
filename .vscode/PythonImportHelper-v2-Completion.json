@@ -1,0 +1,2237 @@
+[
+    {
+        "label": "runpy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "runpy",
+        "description": "runpy",
+        "detail": "runpy",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "Path",
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "isExtraImport": true,
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "structlog",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "structlog",
+        "description": "structlog",
+        "detail": "structlog",
+        "documentation": {}
+    },
+    {
+        "label": "load_config",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "ExcelConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "DrivePathsConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "DrivePathsConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "EmailConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "ExcelConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "GoogleConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "LoggingConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "TrackingConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "load_config",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "ExcelConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "ExcelConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "GoogleConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "DrivePathsConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "ExcelConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "EmailConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "TrackingConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "LoggingConfig",
+        "importPath": "src.application.config",
+        "description": "src.application.config",
+        "isExtraImport": true,
+        "detail": "src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "setup_logging",
+        "importPath": "src.infrastructure.logging_config",
+        "description": "src.infrastructure.logging_config",
+        "isExtraImport": true,
+        "detail": "src.infrastructure.logging_config",
+        "documentation": {}
+    },
+    {
+        "label": "GoogleDriveAdapter",
+        "importPath": "src.infrastructure.google_drive_adapter",
+        "description": "src.infrastructure.google_drive_adapter",
+        "isExtraImport": true,
+        "detail": "src.infrastructure.google_drive_adapter",
+        "documentation": {}
+    },
+    {
+        "label": "OpenpyxlExcelHandler",
+        "importPath": "src.infrastructure.excel_handler",
+        "description": "src.infrastructure.excel_handler",
+        "isExtraImport": true,
+        "detail": "src.infrastructure.excel_handler",
+        "documentation": {}
+    },
+    {
+        "label": "OpenpyxlExcelHandler",
+        "importPath": "src.infrastructure.excel_handler",
+        "description": "src.infrastructure.excel_handler",
+        "isExtraImport": true,
+        "detail": "src.infrastructure.excel_handler",
+        "documentation": {}
+    },
+    {
+        "label": "GmailNotifier",
+        "importPath": "src.infrastructure.gmail_notifier",
+        "description": "src.infrastructure.gmail_notifier",
+        "isExtraImport": true,
+        "detail": "src.infrastructure.gmail_notifier",
+        "documentation": {}
+    },
+    {
+        "label": "GmailNotifier",
+        "importPath": "src.infrastructure.gmail_notifier",
+        "description": "src.infrastructure.gmail_notifier",
+        "isExtraImport": true,
+        "detail": "src.infrastructure.gmail_notifier",
+        "documentation": {}
+    },
+    {
+        "label": "SqliteTracker",
+        "importPath": "src.infrastructure.sqlite_tracker",
+        "description": "src.infrastructure.sqlite_tracker",
+        "isExtraImport": true,
+        "detail": "src.infrastructure.sqlite_tracker",
+        "documentation": {}
+    },
+    {
+        "label": "SqliteTracker",
+        "importPath": "src.infrastructure.sqlite_tracker",
+        "description": "src.infrastructure.sqlite_tracker",
+        "isExtraImport": true,
+        "detail": "src.infrastructure.sqlite_tracker",
+        "documentation": {}
+    },
+    {
+        "label": "SqliteTracker",
+        "importPath": "src.infrastructure.sqlite_tracker",
+        "description": "src.infrastructure.sqlite_tracker",
+        "isExtraImport": true,
+        "detail": "src.infrastructure.sqlite_tracker",
+        "documentation": {}
+    },
+    {
+        "label": "DrivePathResolver",
+        "importPath": "src.infrastructure.drive_path_resolver",
+        "description": "src.infrastructure.drive_path_resolver",
+        "isExtraImport": true,
+        "detail": "src.infrastructure.drive_path_resolver",
+        "documentation": {}
+    },
+    {
+        "label": "DrivePathResolver",
+        "importPath": "src.infrastructure.drive_path_resolver",
+        "description": "src.infrastructure.drive_path_resolver",
+        "isExtraImport": true,
+        "detail": "src.infrastructure.drive_path_resolver",
+        "documentation": {}
+    },
+    {
+        "label": "DrivePathResolver",
+        "importPath": "src.infrastructure.drive_path_resolver",
+        "description": "src.infrastructure.drive_path_resolver",
+        "isExtraImport": true,
+        "detail": "src.infrastructure.drive_path_resolver",
+        "documentation": {}
+    },
+    {
+        "label": "DrivePathResolver",
+        "importPath": "src.infrastructure.drive_path_resolver",
+        "description": "src.infrastructure.drive_path_resolver",
+        "isExtraImport": true,
+        "detail": "src.infrastructure.drive_path_resolver",
+        "documentation": {}
+    },
+    {
+        "label": "DrivePathNotFoundError",
+        "importPath": "src.infrastructure.drive_path_resolver",
+        "description": "src.infrastructure.drive_path_resolver",
+        "isExtraImport": true,
+        "detail": "src.infrastructure.drive_path_resolver",
+        "documentation": {}
+    },
+    {
+        "label": "FileLifecycleManager",
+        "importPath": "src.infrastructure.file_lifecycle_manager",
+        "description": "src.infrastructure.file_lifecycle_manager",
+        "isExtraImport": true,
+        "detail": "src.infrastructure.file_lifecycle_manager",
+        "documentation": {}
+    },
+    {
+        "label": "FileLifecycleManager",
+        "importPath": "src.infrastructure.file_lifecycle_manager",
+        "description": "src.infrastructure.file_lifecycle_manager",
+        "isExtraImport": true,
+        "detail": "src.infrastructure.file_lifecycle_manager",
+        "documentation": {}
+    },
+    {
+        "label": "ConsolidateInvoicesUseCase",
+        "importPath": "src.application.use_cases.consolidate_invoices",
+        "description": "src.application.use_cases.consolidate_invoices",
+        "isExtraImport": true,
+        "detail": "src.application.use_cases.consolidate_invoices",
+        "documentation": {}
+    },
+    {
+        "label": "ConsolidateInvoicesUseCase",
+        "importPath": "src.application.use_cases.consolidate_invoices",
+        "description": "src.application.use_cases.consolidate_invoices",
+        "isExtraImport": true,
+        "detail": "src.application.use_cases.consolidate_invoices",
+        "documentation": {}
+    },
+    {
+        "label": "ConsolidateInvoicesUseCase",
+        "importPath": "src.application.use_cases.consolidate_invoices",
+        "description": "src.application.use_cases.consolidate_invoices",
+        "isExtraImport": true,
+        "detail": "src.application.use_cases.consolidate_invoices",
+        "documentation": {}
+    },
+    {
+        "label": "Protocol",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Protocol",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Protocol",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Protocol",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Optional",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "pandas",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pandas",
+        "description": "pandas",
+        "detail": "pandas",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "field",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "field",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "dataclass",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "field",
+        "importPath": "dataclasses",
+        "description": "dataclasses",
+        "isExtraImport": true,
+        "detail": "dataclasses",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
+        "label": "InvalidOperation",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
+        "label": "InvalidOperation",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
+        "documentation": {}
+    },
+    {
+        "label": "uuid",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "uuid",
+        "description": "uuid",
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "InvoiceRecord",
+        "importPath": "src.domain.entities",
+        "description": "src.domain.entities",
+        "isExtraImport": true,
+        "detail": "src.domain.entities",
+        "documentation": {}
+    },
+    {
+        "label": "RecordStatus",
+        "importPath": "src.domain.entities",
+        "description": "src.domain.entities",
+        "isExtraImport": true,
+        "detail": "src.domain.entities",
+        "documentation": {}
+    },
+    {
+        "label": "InvoiceRecord",
+        "importPath": "src.domain.entities",
+        "description": "src.domain.entities",
+        "isExtraImport": true,
+        "detail": "src.domain.entities",
+        "documentation": {}
+    },
+    {
+        "label": "InvoiceRecord",
+        "importPath": "src.domain.entities",
+        "description": "src.domain.entities",
+        "isExtraImport": true,
+        "detail": "src.domain.entities",
+        "documentation": {}
+    },
+    {
+        "label": "InvoiceRecord",
+        "importPath": "src.domain.entities",
+        "description": "src.domain.entities",
+        "isExtraImport": true,
+        "detail": "src.domain.entities",
+        "documentation": {}
+    },
+    {
+        "label": "RecordStatus",
+        "importPath": "src.domain.entities",
+        "description": "src.domain.entities",
+        "isExtraImport": true,
+        "detail": "src.domain.entities",
+        "documentation": {}
+    },
+    {
+        "label": "ReconciliationError",
+        "importPath": "src.domain.exceptions",
+        "description": "src.domain.exceptions",
+        "isExtraImport": true,
+        "detail": "src.domain.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "SchemaValidationError",
+        "importPath": "src.domain.exceptions",
+        "description": "src.domain.exceptions",
+        "isExtraImport": true,
+        "detail": "src.domain.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "DriveRepository",
+        "importPath": "src.application.ports.drive_repository",
+        "description": "src.application.ports.drive_repository",
+        "isExtraImport": true,
+        "detail": "src.application.ports.drive_repository",
+        "documentation": {}
+    },
+    {
+        "label": "ExcelReader",
+        "importPath": "src.application.ports.excel_handler",
+        "description": "src.application.ports.excel_handler",
+        "isExtraImport": true,
+        "detail": "src.application.ports.excel_handler",
+        "documentation": {}
+    },
+    {
+        "label": "ExcelWriter",
+        "importPath": "src.application.ports.excel_handler",
+        "description": "src.application.ports.excel_handler",
+        "isExtraImport": true,
+        "detail": "src.application.ports.excel_handler",
+        "documentation": {}
+    },
+    {
+        "label": "Notifier",
+        "importPath": "src.application.ports.notifier",
+        "description": "src.application.ports.notifier",
+        "isExtraImport": true,
+        "detail": "src.application.ports.notifier",
+        "documentation": {}
+    },
+    {
+        "label": "Tracker",
+        "importPath": "src.application.ports.tracker",
+        "description": "src.application.ports.tracker",
+        "isExtraImport": true,
+        "detail": "src.application.ports.tracker",
+        "documentation": {}
+    },
+    {
+        "label": "ExecutionReport",
+        "importPath": "src.application.dtos",
+        "description": "src.application.dtos",
+        "isExtraImport": true,
+        "detail": "src.application.dtos",
+        "documentation": {}
+    },
+    {
+        "label": "UpsertResult",
+        "importPath": "src.application.dtos",
+        "description": "src.application.dtos",
+        "isExtraImport": true,
+        "detail": "src.application.dtos",
+        "documentation": {}
+    },
+    {
+        "label": "RowTransformer",
+        "importPath": "src.application.transformers",
+        "description": "src.application.transformers",
+        "isExtraImport": true,
+        "detail": "src.application.transformers",
+        "documentation": {}
+    },
+    {
+        "label": "RowTransformer",
+        "importPath": "src.application.transformers",
+        "description": "src.application.transformers",
+        "isExtraImport": true,
+        "detail": "src.application.transformers",
+        "documentation": {}
+    },
+    {
+        "label": "yaml",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "yaml",
+        "description": "yaml",
+        "detail": "yaml",
+        "documentation": {}
+    },
+    {
+        "label": "UTC",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "UTC",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "UTC",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "UTC",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "base64",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "base64",
+        "description": "base64",
+        "detail": "base64",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "encoders",
+        "importPath": "email",
+        "description": "email",
+        "isExtraImport": true,
+        "detail": "email",
+        "documentation": {}
+    },
+    {
+        "label": "MIMEBase",
+        "importPath": "email.mime.base",
+        "description": "email.mime.base",
+        "isExtraImport": true,
+        "detail": "email.mime.base",
+        "documentation": {}
+    },
+    {
+        "label": "MIMEMultipart",
+        "importPath": "email.mime.multipart",
+        "description": "email.mime.multipart",
+        "isExtraImport": true,
+        "detail": "email.mime.multipart",
+        "documentation": {}
+    },
+    {
+        "label": "MIMEText",
+        "importPath": "email.mime.text",
+        "description": "email.mime.text",
+        "isExtraImport": true,
+        "detail": "email.mime.text",
+        "documentation": {}
+    },
+    {
+        "label": "Credentials",
+        "importPath": "google.oauth2.service_account",
+        "description": "google.oauth2.service_account",
+        "isExtraImport": true,
+        "detail": "google.oauth2.service_account",
+        "documentation": {}
+    },
+    {
+        "label": "Credentials",
+        "importPath": "google.oauth2.service_account",
+        "description": "google.oauth2.service_account",
+        "isExtraImport": true,
+        "detail": "google.oauth2.service_account",
+        "documentation": {}
+    },
+    {
+        "label": "build",
+        "importPath": "googleapiclient.discovery",
+        "description": "googleapiclient.discovery",
+        "isExtraImport": true,
+        "detail": "googleapiclient.discovery",
+        "documentation": {}
+    },
+    {
+        "label": "build",
+        "importPath": "googleapiclient.discovery",
+        "description": "googleapiclient.discovery",
+        "isExtraImport": true,
+        "detail": "googleapiclient.discovery",
+        "documentation": {}
+    },
+    {
+        "label": "MediaFileUpload",
+        "importPath": "googleapiclient.http",
+        "description": "googleapiclient.http",
+        "isExtraImport": true,
+        "detail": "googleapiclient.http",
+        "documentation": {}
+    },
+    {
+        "label": "MediaIoBaseDownload",
+        "importPath": "googleapiclient.http",
+        "description": "googleapiclient.http",
+        "isExtraImport": true,
+        "detail": "googleapiclient.http",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "sqlite3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlite3",
+        "description": "sqlite3",
+        "detail": "sqlite3",
+        "documentation": {}
+    },
+    {
+        "label": "shutil",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "shutil",
+        "description": "shutil",
+        "detail": "shutil",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "call",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "MagicMock",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "patch",
+        "importPath": "unittest.mock",
+        "description": "unittest.mock",
+        "isExtraImport": true,
+        "detail": "unittest.mock",
+        "documentation": {}
+    },
+    {
+        "label": "pytest",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pytest",
+        "description": "pytest",
+        "detail": "pytest",
+        "documentation": {}
+    },
+    {
+        "label": "create_consolidated_xlsx",
+        "importPath": "tests.integration.conftest",
+        "description": "tests.integration.conftest",
+        "isExtraImport": true,
+        "detail": "tests.integration.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "create_source_xlsx",
+        "importPath": "tests.integration.conftest",
+        "description": "tests.integration.conftest",
+        "isExtraImport": true,
+        "detail": "tests.integration.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "tempfile",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "tempfile",
+        "description": "tempfile",
+        "detail": "tempfile",
+        "documentation": {}
+    },
+    {
+        "label": "bin_dir",
+        "kind": 5,
+        "importPath": "smartbots-etl..venv.bin.activate_this",
+        "description": "smartbots-etl..venv.bin.activate_this",
+        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))",
+        "detail": "smartbots-etl..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": "smartbots-etl..venv.bin.activate_this",
+        "description": "smartbots-etl..venv.bin.activate_this",
+        "peekOfCode": "base = bin_dir[: -len(\"bin\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)",
+        "detail": "smartbots-etl..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"PATH\"]",
+        "kind": 5,
+        "importPath": "smartbots-etl..venv.bin.activate_this",
+        "description": "smartbots-etl..venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix",
+        "detail": "smartbots-etl..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV\"]",
+        "kind": 5,
+        "importPath": "smartbots-etl..venv.bin.activate_this",
+        "description": "smartbots-etl..venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "smartbots-etl..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV_PROMPT\"]",
+        "kind": 5,
+        "importPath": "smartbots-etl..venv.bin.activate_this",
+        "description": "smartbots-etl..venv.bin.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "smartbots-etl..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "prev_length",
+        "kind": 5,
+        "importPath": "smartbots-etl..venv.bin.activate_this",
+        "description": "smartbots-etl..venv.bin.activate_this",
+        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"../lib/python3.12/site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "smartbots-etl..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.path[:]",
+        "kind": 5,
+        "importPath": "smartbots-etl..venv.bin.activate_this",
+        "description": "smartbots-etl..venv.bin.activate_this",
+        "peekOfCode": "sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "smartbots-etl..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.real_prefix",
+        "kind": 5,
+        "importPath": "smartbots-etl..venv.bin.activate_this",
+        "description": "smartbots-etl..venv.bin.activate_this",
+        "peekOfCode": "sys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "smartbots-etl..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.prefix",
+        "kind": 5,
+        "importPath": "smartbots-etl..venv.bin.activate_this",
+        "description": "smartbots-etl..venv.bin.activate_this",
+        "peekOfCode": "sys.prefix = base",
+        "detail": "smartbots-etl..venv.bin.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "main",
+        "kind": 2,
+        "importPath": "smartbots-etl.scripts.run_consolidation",
+        "description": "smartbots-etl.scripts.run_consolidation",
+        "peekOfCode": "def main() -> int:\n    config_path = sys.argv[1] if len(sys.argv) > 1 else \"configs/configuration.yaml\"\n    config = load_config(config_path)\n    setup_logging(\n        log_level=config.logging.level,\n        log_dir=Path(config.logging.log_dir) if config.logging.log_to_file else None,\n    )\n    logger = structlog.get_logger()\n    logger.info(\"consolidation_starting\", config_path=config_path)\n    drive = GoogleDriveAdapter(credentials_path=config.google.credentials_path)",
+        "detail": "smartbots-etl.scripts.run_consolidation",
+        "documentation": {}
+    },
+    {
+        "label": "DriveRepository",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.application.ports.drive_repository",
+        "description": "smartbots-etl.src.application.ports.drive_repository",
+        "peekOfCode": "class DriveRepository(Protocol):\n    def list_source_files(self, folder_id: str) -> list[dict]:\n        \"\"\"Returns: [{\"file_id\": \"...\", \"name\": \"...\", \"modified_time\": \"...\"}]\"\"\"\n        ...\n    def download_file(self, file_id: str, local_path: Path) -> Path: ...\n    def upload_file(self, local_path: Path, folder_id: str, file_name: str) -> str: ...\n    def create_backup(self, file_id: str, backup_name: str) -> str: ...\n    def restore_backup(self, backup_file_id: str, original_file_id: str) -> None: ...\n    def update_file(self, file_id: str, local_path: Path) -> None: ...\n    def move_file(self, file_id: str, from_folder_id: str, to_folder_id: str) -> None:",
+        "detail": "smartbots-etl.src.application.ports.drive_repository",
+        "documentation": {}
+    },
+    {
+        "label": "ExcelReader",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.application.ports.excel_handler",
+        "description": "smartbots-etl.src.application.ports.excel_handler",
+        "peekOfCode": "class ExcelReader(Protocol):\n    def read(self, file_path: Path, sheet_name: str = \"Sheet1\") -> pd.DataFrame: ...\n    def validate_schema(\n        self, df: pd.DataFrame, expected_columns: list[str]\n    ) -> tuple[bool, list[str], list[str]]:\n        \"\"\"Returns: (is_valid, missing_columns, extra_columns)\"\"\"\n        ...\nclass ExcelWriter(Protocol):\n    def write(self, df: pd.DataFrame, file_path: Path, sheet_name: str = \"Sheet1\") -> None: ...",
+        "detail": "smartbots-etl.src.application.ports.excel_handler",
+        "documentation": {}
+    },
+    {
+        "label": "ExcelWriter",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.application.ports.excel_handler",
+        "description": "smartbots-etl.src.application.ports.excel_handler",
+        "peekOfCode": "class ExcelWriter(Protocol):\n    def write(self, df: pd.DataFrame, file_path: Path, sheet_name: str = \"Sheet1\") -> None: ...",
+        "detail": "smartbots-etl.src.application.ports.excel_handler",
+        "documentation": {}
+    },
+    {
+        "label": "Notifier",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.application.ports.notifier",
+        "description": "smartbots-etl.src.application.ports.notifier",
+        "peekOfCode": "class Notifier(Protocol):\n    def send(\n        self,\n        subject: str,\n        template_name: str,\n        template_vars: dict[str, Any],\n        recipients: list[str],\n        cc: list[str] | None = None,\n        bcc: list[str] | None = None,\n        attachments: list[Path] | None = None,",
+        "detail": "smartbots-etl.src.application.ports.notifier",
+        "documentation": {}
+    },
+    {
+        "label": "Tracker",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.application.ports.tracker",
+        "description": "smartbots-etl.src.application.ports.tracker",
+        "peekOfCode": "class Tracker(Protocol):\n    def start_run(self, run_uuid: str) -> None:\n        \"\"\"Registra inicio de ejecución.\"\"\"\n        ...\n    def finish_run(self, run_uuid: str, status: str, counters: dict[str, Any]) -> None:\n        \"\"\"Registra fin de ejecución con contadores finales.\"\"\"\n        ...\n    def log_file_start(\n        self,\n        run_uuid: str,",
+        "detail": "smartbots-etl.src.application.ports.tracker",
+        "documentation": {}
+    },
+    {
+        "label": "ConsolidateInvoicesUseCase",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.application.use_cases.consolidate_invoices",
+        "description": "smartbots-etl.src.application.use_cases.consolidate_invoices",
+        "peekOfCode": "class ConsolidateInvoicesUseCase:\n    drive: DriveRepository\n    reader: ExcelReader\n    writer: ExcelWriter\n    notifier: Notifier\n    tracker: Tracker\n    config: AppConfig\n    path_resolver: DrivePathResolver\n    lifecycle: FileLifecycleManager\n    def execute(self) -> ExecutionReport:",
+        "detail": "smartbots-etl.src.application.use_cases.consolidate_invoices",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "smartbots-etl.src.application.use_cases.consolidate_invoices",
+        "description": "smartbots-etl.src.application.use_cases.consolidate_invoices",
+        "peekOfCode": "logger = structlog.get_logger()\nTEMPLATE_MAP = {\n    \"SUCCESS\": \"success\",\n    \"PARTIAL\": \"partial\",\n    \"ERROR\": \"error\",\n    \"NO_FILES\": \"empty\",\n}\n@dataclass(frozen=True)\nclass ConsolidateInvoicesUseCase:\n    drive: DriveRepository",
+        "detail": "smartbots-etl.src.application.use_cases.consolidate_invoices",
+        "documentation": {}
+    },
+    {
+        "label": "TEMPLATE_MAP",
+        "kind": 5,
+        "importPath": "smartbots-etl.src.application.use_cases.consolidate_invoices",
+        "description": "smartbots-etl.src.application.use_cases.consolidate_invoices",
+        "peekOfCode": "TEMPLATE_MAP = {\n    \"SUCCESS\": \"success\",\n    \"PARTIAL\": \"partial\",\n    \"ERROR\": \"error\",\n    \"NO_FILES\": \"empty\",\n}\n@dataclass(frozen=True)\nclass ConsolidateInvoicesUseCase:\n    drive: DriveRepository\n    reader: ExcelReader",
+        "detail": "smartbots-etl.src.application.use_cases.consolidate_invoices",
+        "documentation": {}
+    },
+    {
+        "label": "GoogleConfig",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.application.config",
+        "description": "smartbots-etl.src.application.config",
+        "peekOfCode": "class GoogleConfig:\n    credentials_path: str\n    shared_drive_name: str = \"\"\n    delegated_user: str = \"\"\n@dataclass(frozen=True)\nclass DrivePathsConfig:\n    source_path: str\n    in_process_folder: str = \"En Proceso\"\n    backup_path: str = \"Respaldo\"\n    consolidated_path: str = \"Consolidado\"",
+        "detail": "smartbots-etl.src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "DrivePathsConfig",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.application.config",
+        "description": "smartbots-etl.src.application.config",
+        "peekOfCode": "class DrivePathsConfig:\n    source_path: str\n    in_process_folder: str = \"En Proceso\"\n    backup_path: str = \"Respaldo\"\n    consolidated_path: str = \"Consolidado\"\n    consolidated_filename: str = \"consolidado.xlsx\"\n@dataclass(frozen=True)\nclass ExcelConfig:\n    source_sheet: str = \"Sheet1\"\n    consolidated_sheet: str = \"Consolidado\"",
+        "detail": "smartbots-etl.src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "ExcelConfig",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.application.config",
+        "description": "smartbots-etl.src.application.config",
+        "peekOfCode": "class ExcelConfig:\n    source_sheet: str = \"Sheet1\"\n    consolidated_sheet: str = \"Consolidado\"\n    expected_columns: tuple[str, ...] = (\n        \"N° Factura\",\n        \"N° Referencia\",\n        \"Transportista\",\n        \"Fecha Factura\",\n        \"Descripción\",\n        \"Monto Neto\",",
+        "detail": "smartbots-etl.src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "EmailConfig",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.application.config",
+        "description": "smartbots-etl.src.application.config",
+        "peekOfCode": "class EmailConfig:\n    sender: str\n    to: tuple[str, ...] = ()\n    cc: tuple[str, ...] = ()\n    bcc: tuple[str, ...] = ()\n    subject_prefix: str = \"[Smartbots ETL]\"\n    templates: dict[str, str] = field(default_factory=dict)\n@dataclass(frozen=True)\nclass TrackingConfig:\n    db_path: str = \"data/etl_tracking.db\"",
+        "detail": "smartbots-etl.src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "TrackingConfig",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.application.config",
+        "description": "smartbots-etl.src.application.config",
+        "peekOfCode": "class TrackingConfig:\n    db_path: str = \"data/etl_tracking.db\"\n@dataclass(frozen=True)\nclass LoggingConfig:\n    level: str = \"INFO\"\n    log_to_file: bool = True\n    log_dir: str = \"logs\"\n@dataclass(frozen=True)\nclass AppConfig:\n    google: GoogleConfig",
+        "detail": "smartbots-etl.src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "LoggingConfig",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.application.config",
+        "description": "smartbots-etl.src.application.config",
+        "peekOfCode": "class LoggingConfig:\n    level: str = \"INFO\"\n    log_to_file: bool = True\n    log_dir: str = \"logs\"\n@dataclass(frozen=True)\nclass AppConfig:\n    google: GoogleConfig\n    drive: DrivePathsConfig\n    excel: ExcelConfig\n    email: EmailConfig",
+        "detail": "smartbots-etl.src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "AppConfig",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.application.config",
+        "description": "smartbots-etl.src.application.config",
+        "peekOfCode": "class AppConfig:\n    google: GoogleConfig\n    drive: DrivePathsConfig\n    excel: ExcelConfig\n    email: EmailConfig\n    tracking: TrackingConfig\n    logging: LoggingConfig\ndef load_config(config_path: str | Path) -> AppConfig:\n    \"\"\"Carga y valida la configuración desde un archivo YAML.\"\"\"\n    path = Path(config_path)",
+        "detail": "smartbots-etl.src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "load_config",
+        "kind": 2,
+        "importPath": "smartbots-etl.src.application.config",
+        "description": "smartbots-etl.src.application.config",
+        "peekOfCode": "def load_config(config_path: str | Path) -> AppConfig:\n    \"\"\"Carga y valida la configuración desde un archivo YAML.\"\"\"\n    path = Path(config_path)\n    if not path.exists():\n        msg = f\"Archivo de configuración no encontrado: {path}\"\n        raise FileNotFoundError(msg)\n    with open(path, encoding=\"utf-8\") as f:\n        raw = yaml.safe_load(f)\n    if not isinstance(raw, dict):\n        msg = f\"YAML inválido: se esperaba dict, se obtuvo {type(raw).__name__}\"",
+        "detail": "smartbots-etl.src.application.config",
+        "documentation": {}
+    },
+    {
+        "label": "UpsertResult",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.application.dtos",
+        "description": "smartbots-etl.src.application.dtos",
+        "peekOfCode": "class UpsertResult:\n    inserted: int = 0\n    updated: int = 0\n    unchanged: int = 0\n    all_records: list[InvoiceRecord] = field(default_factory=list)\n    @property\n    def total_processed(self) -> int:\n        return self.inserted + self.updated + self.unchanged\n@dataclass\nclass ExecutionReport:",
+        "detail": "smartbots-etl.src.application.dtos",
+        "documentation": {}
+    },
+    {
+        "label": "ExecutionReport",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.application.dtos",
+        "description": "smartbots-etl.src.application.dtos",
+        "peekOfCode": "class ExecutionReport:\n    run_id: str\n    timestamp: datetime = field(default_factory=lambda: datetime.now(UTC))\n    status: str = \"PENDING\"  # SUCCESS | PARTIAL | ERROR | NO_FILES\n    # Files\n    source_files: list[str] = field(default_factory=list)\n    files_with_errors: list[str] = field(default_factory=list)\n    backup_file_id: Optional[str] = None\n    rollback_executed: bool = False\n    # Counters",
+        "detail": "smartbots-etl.src.application.dtos",
+        "documentation": {}
+    },
+    {
+        "label": "RowTransformer",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.application.transformers",
+        "description": "smartbots-etl.src.application.transformers",
+        "peekOfCode": "class RowTransformer:\n    def __init__(self, config: ExcelConfig) -> None:\n        self.config = config\n        self.column_map = config.column_mapping\n    def transform_row(self, row: dict, source_name: str) -> InvoiceRecord:\n        mapped = self._apply_column_mapping(row)\n        return InvoiceRecord(\n            invoice_number=self._clean_string(mapped[\"invoice_number\"]),\n            reference_number=self._clean_string(mapped[\"reference_number\"]),\n            carrier_name=self._clean_string(mapped[\"carrier_name\"]),",
+        "detail": "smartbots-etl.src.application.transformers",
+        "documentation": {}
+    },
+    {
+        "label": "RecordStatus",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.domain.entities",
+        "description": "smartbots-etl.src.domain.entities",
+        "peekOfCode": "class RecordStatus(Enum):\n    \"\"\"Estado de un registro durante el procesamiento.\"\"\"\n    NEW = \"new\"  # No existe en consolidado → se agregará\n    UPDATED = \"updated\"  # Existe en consolidado → se actualizará\n    UNCHANGED = \"unchanged\"  # Existe y no tiene cambios\n    ERROR = \"error\"  # Falló validación\n@dataclass(frozen=True, kw_only=True)\nclass InvoiceRecord:\n    \"\"\"\n    Entidad central: una fila de factura de transporte.",
+        "detail": "smartbots-etl.src.domain.entities",
+        "documentation": {}
+    },
+    {
+        "label": "InvoiceRecord",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.domain.entities",
+        "description": "smartbots-etl.src.domain.entities",
+        "peekOfCode": "class InvoiceRecord:\n    \"\"\"\n    Entidad central: una fila de factura de transporte.\n    Representa tanto filas del archivo origen como del consolidado.\n    Inmutable — las transformaciones crean nuevas instancias.\n    \"\"\"\n    # === Clave primaria compuesta ===\n    invoice_number: str\n    reference_number: str  # N° Guía / BL / Booking\n    # === Campos de negocio ===",
+        "detail": "smartbots-etl.src.domain.entities",
+        "documentation": {}
+    },
+    {
+        "label": "ConsolidationError",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.domain.exceptions",
+        "description": "smartbots-etl.src.domain.exceptions",
+        "peekOfCode": "class ConsolidationError(Exception):\n    \"\"\"Base para errores del proceso de consolidación.\"\"\"\nclass SourceFileNotFoundError(ConsolidationError):\n    \"\"\"No se encontraron archivos en la carpeta origen.\"\"\"\nclass SchemaValidationError(ConsolidationError):\n    \"\"\"El archivo origen no tiene la estructura esperada.\"\"\"\n    def __init__(self, missing_columns: list[str], extra_columns: list[str]) -> None:\n        self.missing_columns = missing_columns\n        self.extra_columns = extra_columns\n        super().__init__(",
+        "detail": "smartbots-etl.src.domain.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "SourceFileNotFoundError",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.domain.exceptions",
+        "description": "smartbots-etl.src.domain.exceptions",
+        "peekOfCode": "class SourceFileNotFoundError(ConsolidationError):\n    \"\"\"No se encontraron archivos en la carpeta origen.\"\"\"\nclass SchemaValidationError(ConsolidationError):\n    \"\"\"El archivo origen no tiene la estructura esperada.\"\"\"\n    def __init__(self, missing_columns: list[str], extra_columns: list[str]) -> None:\n        self.missing_columns = missing_columns\n        self.extra_columns = extra_columns\n        super().__init__(\n            f\"Columnas faltantes: {missing_columns}, inesperadas: {extra_columns}\"\n        )",
+        "detail": "smartbots-etl.src.domain.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "SchemaValidationError",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.domain.exceptions",
+        "description": "smartbots-etl.src.domain.exceptions",
+        "peekOfCode": "class SchemaValidationError(ConsolidationError):\n    \"\"\"El archivo origen no tiene la estructura esperada.\"\"\"\n    def __init__(self, missing_columns: list[str], extra_columns: list[str]) -> None:\n        self.missing_columns = missing_columns\n        self.extra_columns = extra_columns\n        super().__init__(\n            f\"Columnas faltantes: {missing_columns}, inesperadas: {extra_columns}\"\n        )\nclass RowValidationError(ConsolidationError):\n    \"\"\"Una o más filas no pasaron validación.\"\"\"",
+        "detail": "smartbots-etl.src.domain.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "RowValidationError",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.domain.exceptions",
+        "description": "smartbots-etl.src.domain.exceptions",
+        "peekOfCode": "class RowValidationError(ConsolidationError):\n    \"\"\"Una o más filas no pasaron validación.\"\"\"\n    def __init__(self, errors: list[dict]) -> None:\n        self.errors = errors\n        super().__init__(f\"{len(errors)} filas con errores de validación\")\nclass ReconciliationError(ConsolidationError):\n    \"\"\"La reconciliación post-upsert detectó discrepancias críticas.\"\"\"\n    def __init__(self, data_loss_pct: float, amount_variance: Decimal) -> None:\n        self.data_loss_pct = data_loss_pct\n        self.amount_variance = amount_variance",
+        "detail": "smartbots-etl.src.domain.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "ReconciliationError",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.domain.exceptions",
+        "description": "smartbots-etl.src.domain.exceptions",
+        "peekOfCode": "class ReconciliationError(ConsolidationError):\n    \"\"\"La reconciliación post-upsert detectó discrepancias críticas.\"\"\"\n    def __init__(self, data_loss_pct: float, amount_variance: Decimal) -> None:\n        self.data_loss_pct = data_loss_pct\n        self.amount_variance = amount_variance\n        super().__init__(\n            f\"Reconciliación fallida: data_loss={data_loss_pct:.2f}%, \"\n            f\"amount_variance={amount_variance}\"\n        )\nclass RollbackExecutedError(ConsolidationError):",
+        "detail": "smartbots-etl.src.domain.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "RollbackExecutedError",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.domain.exceptions",
+        "description": "smartbots-etl.src.domain.exceptions",
+        "peekOfCode": "class RollbackExecutedError(ConsolidationError):\n    \"\"\"Se ejecutó rollback tras fallo en actualización.\"\"\"\n    def __init__(self, reason: str, backup_path: str) -> None:\n        self.reason = reason\n        self.backup_path = backup_path\n        super().__init__(f\"Rollback ejecutado: {reason}. Backup: {backup_path}\")\nclass IdempotencySkipError(ConsolidationError):\n    \"\"\"Archivo ya procesado (check de idempotencia).\"\"\"",
+        "detail": "smartbots-etl.src.domain.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "IdempotencySkipError",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.domain.exceptions",
+        "description": "smartbots-etl.src.domain.exceptions",
+        "peekOfCode": "class IdempotencySkipError(ConsolidationError):\n    \"\"\"Archivo ya procesado (check de idempotencia).\"\"\"",
+        "detail": "smartbots-etl.src.domain.exceptions",
+        "documentation": {}
+    },
+    {
+        "label": "Money",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.domain.value_objects",
+        "description": "smartbots-etl.src.domain.value_objects",
+        "peekOfCode": "class Money:\n    \"\"\"Value object para montos financieros. Siempre Decimal, nunca float.\"\"\"\n    amount: Decimal\n    currency: str = \"CLP\"\n    def __post_init__(self) -> None:\n        if not isinstance(self.amount, Decimal):\n            try:\n                object.__setattr__(self, \"amount\", Decimal(str(self.amount)))\n            except (InvalidOperation, ValueError) as e:\n                raise ValueError(f\"Monto inválido: {self.amount}\") from e",
+        "detail": "smartbots-etl.src.domain.value_objects",
+        "documentation": {}
+    },
+    {
+        "label": "DrivePathNotFoundError",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.infrastructure.drive_path_resolver",
+        "description": "smartbots-etl.src.infrastructure.drive_path_resolver",
+        "peekOfCode": "class DrivePathNotFoundError(Exception):\n    \"\"\"Un segmento de ruta no fue encontrado en Google Drive.\"\"\"\n    def __init__(self, segment: str, parent_id: str) -> None:\n        self.segment = segment\n        self.parent_id = parent_id\n        super().__init__(f\"Carpeta '{segment}' no encontrada en Drive (parent_id={parent_id})\")\nclass DrivePathResolver:\n    \"\"\"Convierte rutas como 'Bot RPA/Tocornal/ETL Facturas' a folder IDs de Drive.\"\"\"\n    def __init__(self, drive_service: Any, shared_drive_id: str | None = None) -> None:\n        self._service = drive_service",
+        "detail": "smartbots-etl.src.infrastructure.drive_path_resolver",
+        "documentation": {}
+    },
+    {
+        "label": "DrivePathResolver",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.infrastructure.drive_path_resolver",
+        "description": "smartbots-etl.src.infrastructure.drive_path_resolver",
+        "peekOfCode": "class DrivePathResolver:\n    \"\"\"Convierte rutas como 'Bot RPA/Tocornal/ETL Facturas' a folder IDs de Drive.\"\"\"\n    def __init__(self, drive_service: Any, shared_drive_id: str | None = None) -> None:\n        self._service = drive_service\n        self._shared_drive_id = shared_drive_id\n        self._cache: dict[str, str] = {}\n    @classmethod\n    def detect_shared_drive(cls, drive_service: Any, shared_drive_name: str) -> str | None:\n        \"\"\"Busca un Shared Drive por nombre. Retorna drive_id o None.\"\"\"\n        if not shared_drive_name:",
+        "detail": "smartbots-etl.src.infrastructure.drive_path_resolver",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "smartbots-etl.src.infrastructure.drive_path_resolver",
+        "description": "smartbots-etl.src.infrastructure.drive_path_resolver",
+        "peekOfCode": "logger = structlog.get_logger()\nFOLDER_MIME = \"application/vnd.google-apps.folder\"\nclass DrivePathNotFoundError(Exception):\n    \"\"\"Un segmento de ruta no fue encontrado en Google Drive.\"\"\"\n    def __init__(self, segment: str, parent_id: str) -> None:\n        self.segment = segment\n        self.parent_id = parent_id\n        super().__init__(f\"Carpeta '{segment}' no encontrada en Drive (parent_id={parent_id})\")\nclass DrivePathResolver:\n    \"\"\"Convierte rutas como 'Bot RPA/Tocornal/ETL Facturas' a folder IDs de Drive.\"\"\"",
+        "detail": "smartbots-etl.src.infrastructure.drive_path_resolver",
+        "documentation": {}
+    },
+    {
+        "label": "FOLDER_MIME",
+        "kind": 5,
+        "importPath": "smartbots-etl.src.infrastructure.drive_path_resolver",
+        "description": "smartbots-etl.src.infrastructure.drive_path_resolver",
+        "peekOfCode": "FOLDER_MIME = \"application/vnd.google-apps.folder\"\nclass DrivePathNotFoundError(Exception):\n    \"\"\"Un segmento de ruta no fue encontrado en Google Drive.\"\"\"\n    def __init__(self, segment: str, parent_id: str) -> None:\n        self.segment = segment\n        self.parent_id = parent_id\n        super().__init__(f\"Carpeta '{segment}' no encontrada en Drive (parent_id={parent_id})\")\nclass DrivePathResolver:\n    \"\"\"Convierte rutas como 'Bot RPA/Tocornal/ETL Facturas' a folder IDs de Drive.\"\"\"\n    def __init__(self, drive_service: Any, shared_drive_id: str | None = None) -> None:",
+        "detail": "smartbots-etl.src.infrastructure.drive_path_resolver",
+        "documentation": {}
+    },
+    {
+        "label": "OpenpyxlExcelHandler",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.infrastructure.excel_handler",
+        "description": "smartbots-etl.src.infrastructure.excel_handler",
+        "peekOfCode": "class OpenpyxlExcelHandler:\n    def read(self, file_path: Path, sheet_name: str = \"Sheet1\") -> pd.DataFrame:\n        df = pd.read_excel(file_path, sheet_name=sheet_name, engine=\"openpyxl\")\n        logger.info(\n            \"excel_read\",\n            path=str(file_path),\n            sheet=sheet_name,\n            rows=len(df),\n            columns=list(df.columns),\n        )",
+        "detail": "smartbots-etl.src.infrastructure.excel_handler",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "smartbots-etl.src.infrastructure.excel_handler",
+        "description": "smartbots-etl.src.infrastructure.excel_handler",
+        "peekOfCode": "logger = structlog.get_logger()\nclass OpenpyxlExcelHandler:\n    def read(self, file_path: Path, sheet_name: str = \"Sheet1\") -> pd.DataFrame:\n        df = pd.read_excel(file_path, sheet_name=sheet_name, engine=\"openpyxl\")\n        logger.info(\n            \"excel_read\",\n            path=str(file_path),\n            sheet=sheet_name,\n            rows=len(df),\n            columns=list(df.columns),",
+        "detail": "smartbots-etl.src.infrastructure.excel_handler",
+        "documentation": {}
+    },
+    {
+        "label": "FileLifecycleManager",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.infrastructure.file_lifecycle_manager",
+        "description": "smartbots-etl.src.infrastructure.file_lifecycle_manager",
+        "peekOfCode": "class FileLifecycleManager:\n    \"\"\"Mueve archivos a través de sus etapas de ciclo de vida en Google Drive.\"\"\"\n    def __init__(\n        self,\n        drive_service: Any,\n        path_resolver: DrivePathResolver,\n        config: DrivePathsConfig,\n        shared_drive_id: str | None = None,\n    ) -> None:\n        self._service = drive_service",
+        "detail": "smartbots-etl.src.infrastructure.file_lifecycle_manager",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "smartbots-etl.src.infrastructure.file_lifecycle_manager",
+        "description": "smartbots-etl.src.infrastructure.file_lifecycle_manager",
+        "peekOfCode": "logger = structlog.get_logger()\nclass FileLifecycleManager:\n    \"\"\"Mueve archivos a través de sus etapas de ciclo de vida en Google Drive.\"\"\"\n    def __init__(\n        self,\n        drive_service: Any,\n        path_resolver: DrivePathResolver,\n        config: DrivePathsConfig,\n        shared_drive_id: str | None = None,\n    ) -> None:",
+        "detail": "smartbots-etl.src.infrastructure.file_lifecycle_manager",
+        "documentation": {}
+    },
+    {
+        "label": "GmailNotifier",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.infrastructure.gmail_notifier",
+        "description": "smartbots-etl.src.infrastructure.gmail_notifier",
+        "peekOfCode": "class GmailNotifier:\n    \"\"\"Envía notificaciones HTML por email via Gmail API con soporte de templates.\"\"\"\n    def __init__(\n        self,\n        credentials_path: str,\n        delegated_user: str,\n        sender: str,\n        templates_dir: Path,\n    ) -> None:\n        creds = Credentials.from_service_account_file(credentials_path, scopes=GMAIL_SCOPES)",
+        "detail": "smartbots-etl.src.infrastructure.gmail_notifier",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "smartbots-etl.src.infrastructure.gmail_notifier",
+        "description": "smartbots-etl.src.infrastructure.gmail_notifier",
+        "peekOfCode": "logger = structlog.get_logger()\nGMAIL_SCOPES = [\"https://www.googleapis.com/auth/gmail.send\"]\nclass GmailNotifier:\n    \"\"\"Envía notificaciones HTML por email via Gmail API con soporte de templates.\"\"\"\n    def __init__(\n        self,\n        credentials_path: str,\n        delegated_user: str,\n        sender: str,\n        templates_dir: Path,",
+        "detail": "smartbots-etl.src.infrastructure.gmail_notifier",
+        "documentation": {}
+    },
+    {
+        "label": "GMAIL_SCOPES",
+        "kind": 5,
+        "importPath": "smartbots-etl.src.infrastructure.gmail_notifier",
+        "description": "smartbots-etl.src.infrastructure.gmail_notifier",
+        "peekOfCode": "GMAIL_SCOPES = [\"https://www.googleapis.com/auth/gmail.send\"]\nclass GmailNotifier:\n    \"\"\"Envía notificaciones HTML por email via Gmail API con soporte de templates.\"\"\"\n    def __init__(\n        self,\n        credentials_path: str,\n        delegated_user: str,\n        sender: str,\n        templates_dir: Path,\n    ) -> None:",
+        "detail": "smartbots-etl.src.infrastructure.gmail_notifier",
+        "documentation": {}
+    },
+    {
+        "label": "GoogleDriveAdapter",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.infrastructure.google_drive_adapter",
+        "description": "smartbots-etl.src.infrastructure.google_drive_adapter",
+        "peekOfCode": "class GoogleDriveAdapter:\n    def __init__(self, credentials_path: str, shared_drive_id: str | None = None) -> None:\n        creds = Credentials.from_service_account_file(credentials_path, scopes=SCOPES)\n        self.service = build(\"drive\", \"v3\", credentials=creds)\n        self._shared_drive_id = shared_drive_id\n    def _drive_params(self, **extra: Any) -> dict[str, Any]:\n        params: dict[str, Any] = dict(extra)\n        if self._shared_drive_id:\n            params[\"supportsAllDrives\"] = True\n            params[\"includeItemsFromAllDrives\"] = True",
+        "detail": "smartbots-etl.src.infrastructure.google_drive_adapter",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "smartbots-etl.src.infrastructure.google_drive_adapter",
+        "description": "smartbots-etl.src.infrastructure.google_drive_adapter",
+        "peekOfCode": "logger = structlog.get_logger()\nSCOPES = [\"https://www.googleapis.com/auth/drive\"]\nXLSX_MIME = \"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\"\nclass GoogleDriveAdapter:\n    def __init__(self, credentials_path: str, shared_drive_id: str | None = None) -> None:\n        creds = Credentials.from_service_account_file(credentials_path, scopes=SCOPES)\n        self.service = build(\"drive\", \"v3\", credentials=creds)\n        self._shared_drive_id = shared_drive_id\n    def _drive_params(self, **extra: Any) -> dict[str, Any]:\n        params: dict[str, Any] = dict(extra)",
+        "detail": "smartbots-etl.src.infrastructure.google_drive_adapter",
+        "documentation": {}
+    },
+    {
+        "label": "SCOPES",
+        "kind": 5,
+        "importPath": "smartbots-etl.src.infrastructure.google_drive_adapter",
+        "description": "smartbots-etl.src.infrastructure.google_drive_adapter",
+        "peekOfCode": "SCOPES = [\"https://www.googleapis.com/auth/drive\"]\nXLSX_MIME = \"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\"\nclass GoogleDriveAdapter:\n    def __init__(self, credentials_path: str, shared_drive_id: str | None = None) -> None:\n        creds = Credentials.from_service_account_file(credentials_path, scopes=SCOPES)\n        self.service = build(\"drive\", \"v3\", credentials=creds)\n        self._shared_drive_id = shared_drive_id\n    def _drive_params(self, **extra: Any) -> dict[str, Any]:\n        params: dict[str, Any] = dict(extra)\n        if self._shared_drive_id:",
+        "detail": "smartbots-etl.src.infrastructure.google_drive_adapter",
+        "documentation": {}
+    },
+    {
+        "label": "XLSX_MIME",
+        "kind": 5,
+        "importPath": "smartbots-etl.src.infrastructure.google_drive_adapter",
+        "description": "smartbots-etl.src.infrastructure.google_drive_adapter",
+        "peekOfCode": "XLSX_MIME = \"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet\"\nclass GoogleDriveAdapter:\n    def __init__(self, credentials_path: str, shared_drive_id: str | None = None) -> None:\n        creds = Credentials.from_service_account_file(credentials_path, scopes=SCOPES)\n        self.service = build(\"drive\", \"v3\", credentials=creds)\n        self._shared_drive_id = shared_drive_id\n    def _drive_params(self, **extra: Any) -> dict[str, Any]:\n        params: dict[str, Any] = dict(extra)\n        if self._shared_drive_id:\n            params[\"supportsAllDrives\"] = True",
+        "detail": "smartbots-etl.src.infrastructure.google_drive_adapter",
+        "documentation": {}
+    },
+    {
+        "label": "setup_logging",
+        "kind": 2,
+        "importPath": "smartbots-etl.src.infrastructure.logging_config",
+        "description": "smartbots-etl.src.infrastructure.logging_config",
+        "peekOfCode": "def setup_logging(log_level: str = \"INFO\", log_dir: Path | None = None) -> None:\n    processors: list[structlog.types.Processor] = [\n        structlog.contextvars.merge_contextvars,\n        structlog.processors.add_log_level,\n        structlog.processors.TimeStamper(fmt=\"iso\"),\n        structlog.processors.StackInfoRenderer(),\n        structlog.processors.format_exc_info,\n    ]\n    if log_dir:\n        log_dir.mkdir(parents=True, exist_ok=True)",
+        "detail": "smartbots-etl.src.infrastructure.logging_config",
+        "documentation": {}
+    },
+    {
+        "label": "SqliteTracker",
+        "kind": 6,
+        "importPath": "smartbots-etl.src.infrastructure.sqlite_tracker",
+        "description": "smartbots-etl.src.infrastructure.sqlite_tracker",
+        "peekOfCode": "class SqliteTracker:\n    \"\"\"Rastrea ejecuciones ETL con granularidad a nivel de archivo y registro.\"\"\"\n    def __init__(self, db_path: str) -> None:\n        path = Path(db_path)\n        path.parent.mkdir(parents=True, exist_ok=True)\n        self._conn = sqlite3.connect(str(path))\n        self._conn.execute(\"PRAGMA journal_mode=WAL\")\n        self._conn.execute(\"PRAGMA foreign_keys=ON\")\n        self._conn.executescript(_SCHEMA)\n        self._conn.commit()",
+        "detail": "smartbots-etl.src.infrastructure.sqlite_tracker",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "smartbots-etl.src.infrastructure.sqlite_tracker",
+        "description": "smartbots-etl.src.infrastructure.sqlite_tracker",
+        "peekOfCode": "logger = structlog.get_logger()\n_SCHEMA = \"\"\"\nCREATE TABLE IF NOT EXISTS execution_runs (\n    run_uuid            TEXT PRIMARY KEY,\n    started_at          TEXT NOT NULL,\n    finished_at         TEXT,\n    status              TEXT NOT NULL,\n    total_files         INTEGER DEFAULT 0,\n    total_records       INTEGER DEFAULT 0,\n    inserted            INTEGER DEFAULT 0,",
+        "detail": "smartbots-etl.src.infrastructure.sqlite_tracker",
+        "documentation": {}
+    },
+    {
+        "label": "_SCHEMA",
+        "kind": 5,
+        "importPath": "smartbots-etl.src.infrastructure.sqlite_tracker",
+        "description": "smartbots-etl.src.infrastructure.sqlite_tracker",
+        "peekOfCode": "_SCHEMA = \"\"\"\nCREATE TABLE IF NOT EXISTS execution_runs (\n    run_uuid            TEXT PRIMARY KEY,\n    started_at          TEXT NOT NULL,\n    finished_at         TEXT,\n    status              TEXT NOT NULL,\n    total_files         INTEGER DEFAULT 0,\n    total_records       INTEGER DEFAULT 0,\n    inserted            INTEGER DEFAULT 0,\n    updated             INTEGER DEFAULT 0,",
+        "detail": "smartbots-etl.src.infrastructure.sqlite_tracker",
+        "documentation": {}
+    },
+    {
+        "label": "FakeDrive",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.integration.conftest",
+        "description": "smartbots-etl.tests.integration.conftest",
+        "peekOfCode": "class FakeDrive:\n    \"\"\"In-memory Drive that uses local files as backing storage.\n    Implements the DriveRepository protocol with a local file registry.\n    ``download_file`` copies from registry to destination;\n    ``update_file`` copies destination back to registry so subsequent\n    reads see the updated content.\n    \"\"\"\n    def __init__(self) -> None:\n        self._registry: dict[str, Path] = {}\n        self._source_files: list[dict] = []",
+        "detail": "smartbots-etl.tests.integration.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "FakeNotifier",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.integration.conftest",
+        "description": "smartbots-etl.tests.integration.conftest",
+        "peekOfCode": "class FakeNotifier:\n    \"\"\"Captures notification calls for verification.\"\"\"\n    calls: list[dict] = field(default_factory=list)\n    def send(\n        self,\n        subject: str,\n        template_name: str,\n        template_vars: dict[str, Any],\n        recipients: list[str],\n        cc: list[str] | None = None,",
+        "detail": "smartbots-etl.tests.integration.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "create_source_xlsx",
+        "kind": 2,
+        "importPath": "smartbots-etl.tests.integration.conftest",
+        "description": "smartbots-etl.tests.integration.conftest",
+        "peekOfCode": "def create_source_xlsx(\n    path: Path,\n    rows: list[dict],\n    sheet_name: str = \"Sheet1\",\n) -> Path:\n    \"\"\"Create a source XLSX file with Spanish column names.\"\"\"\n    df = pd.DataFrame(rows, columns=SOURCE_COLUMNS)\n    df.to_excel(path, sheet_name=sheet_name, index=False, engine=\"openpyxl\")\n    return path\ndef create_consolidated_xlsx(",
+        "detail": "smartbots-etl.tests.integration.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "create_consolidated_xlsx",
+        "kind": 2,
+        "importPath": "smartbots-etl.tests.integration.conftest",
+        "description": "smartbots-etl.tests.integration.conftest",
+        "peekOfCode": "def create_consolidated_xlsx(\n    path: Path,\n    rows: list[dict] | None = None,\n    sheet_name: str = \"Consolidado\",\n) -> Path:\n    \"\"\"Create a consolidated XLSX file with standard column names.\"\"\"\n    if rows:\n        df = pd.DataFrame(rows, columns=CONSOLIDATED_COLUMNS)\n    else:\n        df = pd.DataFrame(columns=CONSOLIDATED_COLUMNS)",
+        "detail": "smartbots-etl.tests.integration.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "app_config",
+        "kind": 2,
+        "importPath": "smartbots-etl.tests.integration.conftest",
+        "description": "smartbots-etl.tests.integration.conftest",
+        "peekOfCode": "def app_config(tmp_path: Path) -> AppConfig:\n    \"\"\"Full AppConfig pointing to tmp_path for DB and credentials.\"\"\"\n    return AppConfig(\n        google=GoogleConfig(credentials_path=str(tmp_path / \"creds.json\")),\n        drive=DrivePathsConfig(\n            source_path=\"Bot RPA/Tocornal/ETL Facturas\",\n            consolidated_path=\"Consolidado\",\n            consolidated_filename=\"consolidado.xlsx\",\n        ),\n        excel=ExcelConfig(),",
+        "detail": "smartbots-etl.tests.integration.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "tracker",
+        "kind": 2,
+        "importPath": "smartbots-etl.tests.integration.conftest",
+        "description": "smartbots-etl.tests.integration.conftest",
+        "peekOfCode": "def tracker(app_config: AppConfig) -> SqliteTracker:\n    \"\"\"Real SQLite tracker in tmp_path (no credentials needed).\"\"\"\n    return SqliteTracker(app_config.tracking.db_path)\n@pytest.fixture\ndef excel_handler() -> OpenpyxlExcelHandler:\n    \"\"\"Real Excel handler using openpyxl.\"\"\"\n    return OpenpyxlExcelHandler()\n@pytest.fixture\ndef fake_drive() -> FakeDrive:\n    return FakeDrive()",
+        "detail": "smartbots-etl.tests.integration.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "excel_handler",
+        "kind": 2,
+        "importPath": "smartbots-etl.tests.integration.conftest",
+        "description": "smartbots-etl.tests.integration.conftest",
+        "peekOfCode": "def excel_handler() -> OpenpyxlExcelHandler:\n    \"\"\"Real Excel handler using openpyxl.\"\"\"\n    return OpenpyxlExcelHandler()\n@pytest.fixture\ndef fake_drive() -> FakeDrive:\n    return FakeDrive()\n@pytest.fixture\ndef fake_notifier() -> FakeNotifier:\n    return FakeNotifier()\n@pytest.fixture",
+        "detail": "smartbots-etl.tests.integration.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "fake_drive",
+        "kind": 2,
+        "importPath": "smartbots-etl.tests.integration.conftest",
+        "description": "smartbots-etl.tests.integration.conftest",
+        "peekOfCode": "def fake_drive() -> FakeDrive:\n    return FakeDrive()\n@pytest.fixture\ndef fake_notifier() -> FakeNotifier:\n    return FakeNotifier()\n@pytest.fixture\ndef path_resolver() -> MagicMock:\n    \"\"\"Mock PathResolver that maps known paths to deterministic folder IDs.\"\"\"\n    mock = MagicMock()\n    def resolve(path: str) -> str:",
+        "detail": "smartbots-etl.tests.integration.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "fake_notifier",
+        "kind": 2,
+        "importPath": "smartbots-etl.tests.integration.conftest",
+        "description": "smartbots-etl.tests.integration.conftest",
+        "peekOfCode": "def fake_notifier() -> FakeNotifier:\n    return FakeNotifier()\n@pytest.fixture\ndef path_resolver() -> MagicMock:\n    \"\"\"Mock PathResolver that maps known paths to deterministic folder IDs.\"\"\"\n    mock = MagicMock()\n    def resolve(path: str) -> str:\n        mapping = {\n            \"Bot RPA/Tocornal/ETL Facturas\": \"source_folder_id\",\n            \"Consolidado\": \"consolidated_folder_id\",",
+        "detail": "smartbots-etl.tests.integration.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "path_resolver",
+        "kind": 2,
+        "importPath": "smartbots-etl.tests.integration.conftest",
+        "description": "smartbots-etl.tests.integration.conftest",
+        "peekOfCode": "def path_resolver() -> MagicMock:\n    \"\"\"Mock PathResolver that maps known paths to deterministic folder IDs.\"\"\"\n    mock = MagicMock()\n    def resolve(path: str) -> str:\n        mapping = {\n            \"Bot RPA/Tocornal/ETL Facturas\": \"source_folder_id\",\n            \"Consolidado\": \"consolidated_folder_id\",\n        }\n        return mapping.get(path, f\"folder_{path}\")\n    mock.resolve_path.side_effect = resolve",
+        "detail": "smartbots-etl.tests.integration.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "lifecycle",
+        "kind": 2,
+        "importPath": "smartbots-etl.tests.integration.conftest",
+        "description": "smartbots-etl.tests.integration.conftest",
+        "peekOfCode": "def lifecycle() -> MagicMock:\n    \"\"\"Mock FileLifecycleManager (move_to_in_process / move_to_backup).\"\"\"\n    return MagicMock()\n@pytest.fixture\ndef build_use_case(\n    fake_drive: FakeDrive,\n    excel_handler: OpenpyxlExcelHandler,\n    fake_notifier: FakeNotifier,\n    tracker: SqliteTracker,\n    app_config: AppConfig,",
+        "detail": "smartbots-etl.tests.integration.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "build_use_case",
+        "kind": 2,
+        "importPath": "smartbots-etl.tests.integration.conftest",
+        "description": "smartbots-etl.tests.integration.conftest",
+        "peekOfCode": "def build_use_case(\n    fake_drive: FakeDrive,\n    excel_handler: OpenpyxlExcelHandler,\n    fake_notifier: FakeNotifier,\n    tracker: SqliteTracker,\n    app_config: AppConfig,\n    path_resolver: MagicMock,\n    lifecycle: MagicMock,\n):\n    \"\"\"Factory that builds a ConsolidateInvoicesUseCase with real + fake deps.\"\"\"",
+        "detail": "smartbots-etl.tests.integration.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "SOURCE_COLUMNS",
+        "kind": 5,
+        "importPath": "smartbots-etl.tests.integration.conftest",
+        "description": "smartbots-etl.tests.integration.conftest",
+        "peekOfCode": "SOURCE_COLUMNS = [\n    \"N° Factura\",\n    \"N° Referencia\",\n    \"Transportista\",\n    \"Fecha Factura\",\n    \"Descripción\",\n    \"Monto Neto\",\n    \"IVA\",\n    \"Monto Total\",\n    \"Moneda\",",
+        "detail": "smartbots-etl.tests.integration.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "CONSOLIDATED_COLUMNS",
+        "kind": 5,
+        "importPath": "smartbots-etl.tests.integration.conftest",
+        "description": "smartbots-etl.tests.integration.conftest",
+        "peekOfCode": "CONSOLIDATED_COLUMNS = [\n    \"invoice_number\",\n    \"reference_number\",\n    \"carrier_name\",\n    \"invoice_date\",\n    \"description\",\n    \"net_amount\",\n    \"tax_amount\",\n    \"total_amount\",\n    \"currency\",",
+        "detail": "smartbots-etl.tests.integration.conftest",
+        "documentation": {}
+    },
+    {
+        "label": "TestSuccessFreshConsolidation",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "description": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "peekOfCode": "class TestSuccessFreshConsolidation:\n    def test_fresh_insert_three_rows(self, tmp_path, fake_drive, fake_notifier, build_use_case):\n        sources = [\n            _register_source(fake_drive, tmp_path, \"facturas_enero.xlsx\", _valid_source_rows())\n        ]\n        fake_drive.set_source_files(sources)\n        consolidated_path = _register_consolidated(fake_drive, tmp_path)\n        report = build_use_case().execute()\n        assert report.status == \"SUCCESS\"\n        assert report.inserted_count == 3",
+        "detail": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "documentation": {}
+    },
+    {
+        "label": "TestUpsertUpdatesAndPreserves",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "description": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "peekOfCode": "class TestUpsertUpdatesAndPreserves:\n    def test_upsert_update_and_insert(self, tmp_path, fake_drive, fake_notifier, build_use_case):\n        existing_rows = [\n            {\n                \"invoice_number\": \"FAC-001\",\n                \"reference_number\": \"REF-001\",\n                \"carrier_name\": \"Transportes Chile Ltda\",\n                \"invoice_date\": \"2026-01-15\",\n                \"description\": \"Flete Santiago-Valparaíso\",\n                \"net_amount\": 100000,",
+        "detail": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "documentation": {}
+    },
+    {
+        "label": "TestPartialMixedFiles",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "description": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "peekOfCode": "class TestPartialMixedFiles:\n    def test_partial_with_schema_error(self, tmp_path, fake_drive, fake_notifier, build_use_case):\n        good_meta = _register_source(fake_drive, tmp_path, \"good_file.xlsx\", _valid_source_rows())\n        bad_path = tmp_path / \"bad_file.xlsx\"\n        bad_df = pd.DataFrame({\"Columna_Invalida\": [\"X\"], \"Otra_Columna\": [123]})\n        bad_df.to_excel(bad_path, sheet_name=\"Sheet1\", index=False, engine=\"openpyxl\")\n        fake_drive.register(\"src_bad_file.xlsx\", bad_path)\n        bad_meta = {\n            \"file_id\": \"src_bad_file.xlsx\",\n            \"name\": \"bad_file.xlsx\",",
+        "detail": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "documentation": {}
+    },
+    {
+        "label": "TestTrackerAuditTrail",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "description": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "peekOfCode": "class TestTrackerAuditTrail:\n    def test_tracker_tables_populated(\n        self, tmp_path, fake_drive, fake_notifier, build_use_case, tracker\n    ):\n        sources = [\n            _register_source(fake_drive, tmp_path, \"facturas_enero.xlsx\", _valid_source_rows())\n        ]\n        fake_drive.set_source_files(sources)\n        _register_consolidated(fake_drive, tmp_path)\n        report = build_use_case().execute()",
+        "detail": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "documentation": {}
+    },
+    {
+        "label": "TestRowValidationErrors",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "description": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "peekOfCode": "class TestRowValidationErrors:\n    def test_validation_errors_logged(\n        self, tmp_path, fake_drive, fake_notifier, build_use_case, tracker\n    ):\n        rows = [\n            {\n                \"N° Factura\": \"FAC-001\",\n                \"N° Referencia\": \"REF-001\",\n                \"Transportista\": \"Trans A\",\n                \"Fecha Factura\": \"15-01-2026\",",
+        "detail": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "documentation": {}
+    },
+    {
+        "label": "TestFinancialReconciliation",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "description": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "peekOfCode": "class TestFinancialReconciliation:\n    def test_amounts_match(self, tmp_path, fake_drive, fake_notifier, build_use_case):\n        sources = [_register_source(fake_drive, tmp_path, \"facturas.xlsx\", _valid_source_rows())]\n        fake_drive.set_source_files(sources)\n        _register_consolidated(fake_drive, tmp_path)\n        report = build_use_case().execute()\n        assert report.status == \"SUCCESS\"\n        assert report.source_total_amount == Decimal(\"535500\")\n        assert report.output_total_amount == Decimal(\"535500\")\n        assert report.amount_variance == Decimal(\"0\")",
+        "detail": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "documentation": {}
+    },
+    {
+        "label": "TestNoSourceFiles",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "description": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "peekOfCode": "class TestNoSourceFiles:\n    def test_no_files(self, tmp_path, fake_drive, fake_notifier, build_use_case):\n        fake_drive.set_source_files([])\n        _register_consolidated(fake_drive, tmp_path)\n        report = build_use_case().execute()\n        assert report.status == \"NO_FILES\"\n        assert report.total_files == 0\n        assert report.inserted_count == 0\n        assert len(fake_notifier.calls) == 1",
+        "detail": "smartbots-etl.tests.integration.test_consolidation_flow",
+        "documentation": {}
+    },
+    {
+        "label": "TestLoadConfig",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_config",
+        "description": "smartbots-etl.tests.unit.test_config",
+        "peekOfCode": "class TestLoadConfig:\n    def test_loads_valid_yaml(self, tmp_path):\n        config = load_config(_write_yaml(tmp_path, _minimal_config()))\n        assert config.google.credentials_path == \"/tmp/creds.json\"\n        assert config.drive.source_path == \"Bot RPA/Tocornal/ETL Facturas\"\n        assert config.email.sender == \"etl@test.com\"\n    def test_defaults_applied(self, tmp_path):\n        config = load_config(_write_yaml(tmp_path, _minimal_config()))\n        assert config.drive.in_process_folder == \"En Proceso\"\n        assert config.drive.backup_path == \"Respaldo\"",
+        "detail": "smartbots-etl.tests.unit.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "TestExcelConfigDefaults",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_config",
+        "description": "smartbots-etl.tests.unit.test_config",
+        "peekOfCode": "class TestExcelConfigDefaults:\n    def test_default_expected_columns(self):\n        config = ExcelConfig()\n        assert len(config.expected_columns) == 9\n        assert \"N° Factura\" in config.expected_columns\n    def test_default_column_mapping(self):\n        config = ExcelConfig()\n        assert config.column_mapping[\"N° Factura\"] == \"invoice_number\"\n        assert config.column_mapping[\"Monto Total\"] == \"total_amount\"",
+        "detail": "smartbots-etl.tests.unit.test_config",
+        "documentation": {}
+    },
+    {
+        "label": "TestInvoiceRecord",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_entities",
+        "description": "smartbots-etl.tests.unit.test_entities",
+        "peekOfCode": "class TestInvoiceRecord:\n    def test_primary_key_composite(self):\n        record = _make_record()\n        assert record.primary_key == (\"F-001\", \"GD-100\")\n    def test_rejects_negative_total(self):\n        with pytest.raises(ValueError, match=\"no puede ser negativo\"):\n            _make_record(\n                net_amount=Decimal(\"-100\"),\n                tax_amount=Decimal(\"0\"),\n                total_amount=Decimal(\"-100\"),",
+        "detail": "smartbots-etl.tests.unit.test_entities",
+        "documentation": {}
+    },
+    {
+        "label": "_FakeNotifier",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_gmail_notifier",
+        "description": "smartbots-etl.tests.unit.test_gmail_notifier",
+        "peekOfCode": "class _FakeNotifier:\n    def __init__(self, templates_dir: Path):\n        self._templates_dir = templates_dir\n    _render_template = GmailNotifier._render_template\nclass TestRenderTemplate:\n    def test_substitutes_placeholders(self, tmp_path):\n        template = tmp_path / \"test.html\"\n        template.write_text(\"<p>{run_id} - {timestamp}</p>\", encoding=\"utf-8\")\n        notifier = _FakeNotifier(tmp_path)\n        result = notifier._render_template(",
+        "detail": "smartbots-etl.tests.unit.test_gmail_notifier",
+        "documentation": {}
+    },
+    {
+        "label": "TestRenderTemplate",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_gmail_notifier",
+        "description": "smartbots-etl.tests.unit.test_gmail_notifier",
+        "peekOfCode": "class TestRenderTemplate:\n    def test_substitutes_placeholders(self, tmp_path):\n        template = tmp_path / \"test.html\"\n        template.write_text(\"<p>{run_id} - {timestamp}</p>\", encoding=\"utf-8\")\n        notifier = _FakeNotifier(tmp_path)\n        result = notifier._render_template(\n            \"test.html\", {\"run_id\": \"abc-123\", \"timestamp\": \"2026-02-11\"}\n        )\n        assert \"abc-123\" in result\n        assert \"2026-02-11\" in result",
+        "detail": "smartbots-etl.tests.unit.test_gmail_notifier",
+        "documentation": {}
+    },
+    {
+        "label": "TestHtmlToPlain",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_gmail_notifier",
+        "description": "smartbots-etl.tests.unit.test_gmail_notifier",
+        "peekOfCode": "class TestHtmlToPlain:\n    def test_strips_tags(self):\n        result = GmailNotifier._html_to_plain(\"<p>Hello <b>World</b></p>\")\n        assert result == \"Hello World\"\n    def test_converts_br_to_newline(self):\n        result = GmailNotifier._html_to_plain(\"Line1<br/>Line2<br>Line3\")\n        assert \"Line1\\nLine2\\nLine3\" in result\n    def test_collapses_multiple_newlines(self):\n        result = GmailNotifier._html_to_plain(\"<p>A</p>\\n\\n\\n\\n<p>B</p>\")\n        assert \"\\n\\n\\n\" not in result",
+        "detail": "smartbots-etl.tests.unit.test_gmail_notifier",
+        "documentation": {}
+    },
+    {
+        "label": "TestResolvePath",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_path_resolver",
+        "description": "smartbots-etl.tests.unit.test_path_resolver",
+        "peekOfCode": "class TestResolvePath:\n    def test_single_segment(self):\n        service = _mock_service({\"Consolidado\": [{\"id\": \"folder-c\", \"name\": \"Consolidado\"}]})\n        resolver = DrivePathResolver(service)\n        result = resolver.resolve_path(\"Consolidado\")\n        assert result == \"folder-c\"\n    def test_multi_segment_path(self):\n        service = _mock_service(\n            {\n                \"Bot RPA\": [{\"id\": \"id-1\", \"name\": \"Bot RPA\"}],",
+        "detail": "smartbots-etl.tests.unit.test_path_resolver",
+        "documentation": {}
+    },
+    {
+        "label": "TestEnsurePath",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_path_resolver",
+        "description": "smartbots-etl.tests.unit.test_path_resolver",
+        "peekOfCode": "class TestEnsurePath:\n    def test_creates_missing_folder(self):\n        service = MagicMock()\n        call_count = {\"n\": 0}\n        def files_list(**kwargs):\n            mock_resp = MagicMock()\n            call_count[\"n\"] += 1\n            if call_count[\"n\"] == 1:\n                mock_resp.execute.return_value = {\"files\": []}\n            else:",
+        "detail": "smartbots-etl.tests.unit.test_path_resolver",
+        "documentation": {}
+    },
+    {
+        "label": "TestDetectSharedDrive",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_path_resolver",
+        "description": "smartbots-etl.tests.unit.test_path_resolver",
+        "peekOfCode": "class TestDetectSharedDrive:\n    def test_returns_drive_id(self):\n        service = MagicMock()\n        service.drives().list.return_value.execute.return_value = {\n            \"drives\": [{\"id\": \"sd-1\", \"name\": \"Mi Drive Compartido\"}]\n        }\n        result = DrivePathResolver.detect_shared_drive(service, \"Mi Drive Compartido\")\n        assert result == \"sd-1\"\n    def test_returns_none_when_not_found(self):\n        service = MagicMock()",
+        "detail": "smartbots-etl.tests.unit.test_path_resolver",
+        "documentation": {}
+    },
+    {
+        "label": "TestStartAndFinishRun",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_sqlite_tracker",
+        "description": "smartbots-etl.tests.unit.test_sqlite_tracker",
+        "peekOfCode": "class TestStartAndFinishRun:\n    def test_start_run_creates_record(self, tracker):\n        tracker.start_run(\"run-001\")\n        summary = tracker.get_run_summary(\"run-001\")\n        assert summary[\"run_uuid\"] == \"run-001\"\n        assert summary[\"status\"] == \"RUNNING\"\n    def test_finish_run_updates_record(self, tracker):\n        tracker.start_run(\"run-002\")\n        tracker.finish_run(\n            \"run-002\",",
+        "detail": "smartbots-etl.tests.unit.test_sqlite_tracker",
+        "documentation": {}
+    },
+    {
+        "label": "TestFileLog",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_sqlite_tracker",
+        "description": "smartbots-etl.tests.unit.test_sqlite_tracker",
+        "peekOfCode": "class TestFileLog:\n    def test_log_file_start_returns_id(self, tracker):\n        tracker.start_run(\"run-003\")\n        file_id = tracker.log_file_start(\n            \"run-003\", \"test.xlsx\", \"drive-id-1\", \"2026-01-15T10:00:00Z\"\n        )\n        assert isinstance(file_id, int)\n        assert file_id > 0\n    def test_log_file_schema(self, tracker):\n        tracker.start_run(\"run-004\")",
+        "detail": "smartbots-etl.tests.unit.test_sqlite_tracker",
+        "documentation": {}
+    },
+    {
+        "label": "TestRecordLog",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_sqlite_tracker",
+        "description": "smartbots-etl.tests.unit.test_sqlite_tracker",
+        "peekOfCode": "class TestRecordLog:\n    def test_log_single_record(self, tracker):\n        tracker.start_run(\"run-010\")\n        fid = tracker.log_file_start(\"run-010\", \"t.xlsx\", \"d-1\")\n        tracker.log_record(\"run-010\", fid, 0, \"F-001\", \"R-001\", \"INSERT\", None)\n    def test_log_records_batch(self, tracker):\n        tracker.start_run(\"run-011\")\n        fid = tracker.log_file_start(\"run-011\", \"t.xlsx\", \"d-1\")\n        batch = [\n            {",
+        "detail": "smartbots-etl.tests.unit.test_sqlite_tracker",
+        "documentation": {}
+    },
+    {
+        "label": "TestIdempotency",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_sqlite_tracker",
+        "description": "smartbots-etl.tests.unit.test_sqlite_tracker",
+        "peekOfCode": "class TestIdempotency:\n    def test_is_file_processed_false_initially(self, tracker):\n        assert tracker.is_file_processed(\"new.xlsx\", \"2026-01-15T10:00:00Z\") is False\n    def test_is_file_processed_true_after_completion(self, tracker):\n        tracker.start_run(\"run-020\")\n        fid = tracker.log_file_start(\"run-020\", \"done.xlsx\", \"d-1\", \"2026-01-15T10:00:00Z\")\n        tracker.log_file_finish(fid, \"COMPLETED\", 10, 10, 0, None)\n        assert tracker.is_file_processed(\"done.xlsx\", \"2026-01-15T10:00:00Z\") is True\n    def test_is_file_processed_false_if_errored(self, tracker):\n        tracker.start_run(\"run-021\")",
+        "detail": "smartbots-etl.tests.unit.test_sqlite_tracker",
+        "documentation": {}
+    },
+    {
+        "label": "tracker",
+        "kind": 2,
+        "importPath": "smartbots-etl.tests.unit.test_sqlite_tracker",
+        "description": "smartbots-etl.tests.unit.test_sqlite_tracker",
+        "peekOfCode": "def tracker(tmp_path):\n    db_path = str(tmp_path / \"test_tracking.db\")\n    t = SqliteTracker(db_path=db_path)\n    yield t\n    t.close()\nclass TestStartAndFinishRun:\n    def test_start_run_creates_record(self, tracker):\n        tracker.start_run(\"run-001\")\n        summary = tracker.get_run_summary(\"run-001\")\n        assert summary[\"run_uuid\"] == \"run-001\"",
+        "detail": "smartbots-etl.tests.unit.test_sqlite_tracker",
+        "documentation": {}
+    },
+    {
+        "label": "TestMoneyParsing",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_transformers",
+        "description": "smartbots-etl.tests.unit.test_transformers",
+        "peekOfCode": "class TestMoneyParsing:\n    def test_parses_chilean_format(self, transformer):\n        assert transformer._parse_money(\"1.234.567\") == Decimal(\"1234567\")\n    def test_parses_with_dollar_sign(self, transformer):\n        assert transformer._parse_money(\"$12.345\") == Decimal(\"12345\")\n    def test_parses_decimal_comma(self, transformer):\n        assert transformer._parse_money(\"1234,56\") == Decimal(\"1234.56\")\n    def test_parses_us_format(self, transformer):\n        assert transformer._parse_money(\"1,234.56\") == Decimal(\"1234.56\")\n    def test_parses_integer(self, transformer):",
+        "detail": "smartbots-etl.tests.unit.test_transformers",
+        "documentation": {}
+    },
+    {
+        "label": "TestDateParsing",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_transformers",
+        "description": "smartbots-etl.tests.unit.test_transformers",
+        "peekOfCode": "class TestDateParsing:\n    def test_parses_chilean_format(self, transformer):\n        assert transformer._parse_date(\"15-02-2026\") == date(2026, 2, 15)\n    def test_parses_iso_format(self, transformer):\n        assert transformer._parse_date(\"2026-02-15\") == date(2026, 2, 15)\n    def test_parses_slash_format(self, transformer):\n        assert transformer._parse_date(\"15/02/2026\") == date(2026, 2, 15)\n    def test_passes_through_date_object(self, transformer):\n        d = date(2026, 1, 1)\n        assert transformer._parse_date(d) == d",
+        "detail": "smartbots-etl.tests.unit.test_transformers",
+        "documentation": {}
+    },
+    {
+        "label": "TestRowTransform",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_transformers",
+        "description": "smartbots-etl.tests.unit.test_transformers",
+        "peekOfCode": "class TestRowTransform:\n    def test_transforms_complete_row(self, transformer):\n        row = {\n            \"N° Factura\": \"F-100\",\n            \"N° Referencia\": \"GD-200\",\n            \"Transportista\": \"  Beta  \",\n            \"Fecha Factura\": \"15-02-2026\",\n            \"Descripción\": \"Transporte\",\n            \"Monto Neto\": \"10000\",\n            \"IVA\": \"1900\",",
+        "detail": "smartbots-etl.tests.unit.test_transformers",
+        "documentation": {}
+    },
+    {
+        "label": "transformer",
+        "kind": 2,
+        "importPath": "smartbots-etl.tests.unit.test_transformers",
+        "description": "smartbots-etl.tests.unit.test_transformers",
+        "peekOfCode": "def transformer():\n    config = ExcelConfig()\n    return RowTransformer(config)\nclass TestMoneyParsing:\n    def test_parses_chilean_format(self, transformer):\n        assert transformer._parse_money(\"1.234.567\") == Decimal(\"1234567\")\n    def test_parses_with_dollar_sign(self, transformer):\n        assert transformer._parse_money(\"$12.345\") == Decimal(\"12345\")\n    def test_parses_decimal_comma(self, transformer):\n        assert transformer._parse_money(\"1234,56\") == Decimal(\"1234.56\")",
+        "detail": "smartbots-etl.tests.unit.test_transformers",
+        "documentation": {}
+    },
+    {
+        "label": "TestConsolidateInvoicesUseCase",
+        "kind": 6,
+        "importPath": "smartbots-etl.tests.unit.test_use_case",
+        "description": "smartbots-etl.tests.unit.test_use_case",
+        "peekOfCode": "class TestConsolidateInvoicesUseCase:\n    def test_no_files_returns_no_files_status(self, config, mocks):\n        mocks[\"path_resolver\"].resolve_path.return_value = \"folder-id\"\n        mocks[\"drive\"].find_file_in_folder.return_value = \"consol-id\"\n        mocks[\"drive\"].list_source_files.return_value = []\n        uc = ConsolidateInvoicesUseCase(**mocks, config=config)\n        report = uc.execute()\n        assert report.status == \"NO_FILES\"\n        mocks[\"notifier\"].send.assert_called_once()\n        mocks[\"tracker\"].start_run.assert_called_once()",
+        "detail": "smartbots-etl.tests.unit.test_use_case",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "kind": 2,
+        "importPath": "smartbots-etl.tests.unit.test_use_case",
+        "description": "smartbots-etl.tests.unit.test_use_case",
+        "peekOfCode": "def config():\n    return AppConfig(\n        google=GoogleConfig(credentials_path=\"/tmp/creds.json\"),\n        drive=DrivePathsConfig(source_path=\"Bot RPA/ETL\"),\n        excel=ExcelConfig(),\n        email=EmailConfig(\n            sender=\"etl@test.com\",\n            to=(\"dest@test.com\",),\n            templates={\n                \"success\": \"Exito.html\",",
+        "detail": "smartbots-etl.tests.unit.test_use_case",
+        "documentation": {}
+    },
+    {
+        "label": "mocks",
+        "kind": 2,
+        "importPath": "smartbots-etl.tests.unit.test_use_case",
+        "description": "smartbots-etl.tests.unit.test_use_case",
+        "peekOfCode": "def mocks():\n    return {\n        \"drive\": MagicMock(),\n        \"reader\": MagicMock(),\n        \"writer\": MagicMock(),\n        \"notifier\": MagicMock(),\n        \"tracker\": MagicMock(),\n        \"path_resolver\": MagicMock(),\n        \"lifecycle\": MagicMock(),\n    }",
+        "detail": "smartbots-etl.tests.unit.test_use_case",
+        "documentation": {}
+    }
+]
