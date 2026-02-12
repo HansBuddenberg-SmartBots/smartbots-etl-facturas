@@ -92,7 +92,8 @@ class AppConfig:
 
 def load_config(config_path: str | Path) -> AppConfig:
     """Carga y valida la configuración desde un archivo YAML."""
-    path = Path(config_path)
+    # Resuelve la ruta de forma absoluta para evitar problemas con el directorio de trabajo actual
+    path = Path(config_path).resolve()
     if not path.exists():
         msg = f"Archivo de configuración no encontrado: {path}"
         raise FileNotFoundError(msg)
