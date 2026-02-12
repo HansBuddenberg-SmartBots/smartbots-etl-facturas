@@ -5,54 +5,40 @@
 # === Google APIs ===
 google:
   credentials_path: "./credentials/credentials.json"
-  # Si se trabaja en Shared Drive, indicar el nombre. Vacío = My Drive.
-  shared_drive_name: ""
-  # Email del usuario a impersonar para Gmail API (domain-wide delegation)
-  delegated_user: "h.buddenberg@gmail.com"
+  token_path: "./credentials/token.json"
 
 # === Rutas en Google Drive ===
 drive:
-  source_path: "Bot RPA/Tocornal/ETL Facturas"
+  source_path: "Bot RPA/Tocornal Export/Operaciones/ETL Facturas"
   in_process_folder: "En Proceso"          # Subcarpeta dentro de source_path
   backup_path: "Respaldo"                  # Subcarpeta dentro de source_path
-  consolidated_path: "Consolidado"         # Ruta desde raíz de Drive
-  consolidated_filename: "consolidado.xlsx"
+  consolidated_path: "Bot RPA/Tocornal Export/Operaciones/ETL Facturas/Consolidado"
+  consolidated_filename: "CONSOLIDADO DE FACTURAS.xlsx"
 
 # === Excel ===
 excel:
-  source_sheet: "Sheet1"
-  consolidated_sheet: "Consolidado"
-  expected_columns:
-    - "N° Factura"
-    - "N° Referencia"
-    - "Transportista"
-    - "Fecha Factura"
-    - "Descripción"
-    - "Monto Neto"
-    - "IVA"
-    - "Monto Total"
-    - "Moneda"
+  header_row: 11
+  data_start_row: 12
+  source_sheet: "DETALLE FACTURACIÓN CONTENEDORE"
+  # Validación deshabilitada por ahora - se usa calamine
+  skip_schema_validation: true
+  # Columnas reales del archivo EJEMPLO
   column_mapping:
-    "N° Factura": "invoice_number"
-    "N° Referencia": "reference_number"
-    "Transportista": "carrier_name"
-    "Fecha Factura": "invoice_date"
-    "Descripción": "description"
-    "Monto Neto": "net_amount"
-    "IVA": "tax_amount"
-    "Monto Total": "total_amount"
-    "Moneda": "currency"
-  date_format: "%d-%m-%Y"
+    "Empresa Transporte": "carrier_name"
+    "Nave": "vessel_name"
+    "Órdenes de Embarque": "booking_number"
+    "Guías de Despacho": "dispatch_numbers"
+    "Total Servicio ($)": "total_amount"
+    "Fecha Emisión": "invoice_date"
+  consolidated_sheet: "CONTROL FACTURAS"
 
 # === Email (Gmail API) ===
 email:
-  sender: "bot-rpa@santaelena.cl"
+  sender: "h.buddenberg@gmail.com"
   to:
-    - "operaciones@santaelena.cl"
-  cc:
-    - "supervisor@santaelena.cl"
-  bcc:
-    - "auditoria@santaelena.cl"
+    - "h.buddenberg@gmail.com"
+  cc: []
+  bcc: []
   subject_prefix: "[Smartbots ETL]"
   templates:
     success: "ETL_Consolidacion_Exito.html"

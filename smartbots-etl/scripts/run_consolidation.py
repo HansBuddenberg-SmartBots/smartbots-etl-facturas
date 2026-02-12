@@ -13,9 +13,9 @@ import structlog
 
 from src.application.config import load_config
 from src.infrastructure.logging_config import setup_logging
-from src.infrastructure.google_drive_adapter import GoogleDriveAdapter
+from src.infrastructure.oauth_google_drive_adapter import OAuthGoogleDriveAdapter
 from src.infrastructure.excel_handler import OpenpyxlExcelHandler
-from src.infrastructure.gmail_notifier import GmailNotifier
+from src.infrastructure.oauth_gmail_notifier import OAuthGmailNotifier
 from src.infrastructure.sqlite_tracker import SqliteTracker
 from src.infrastructure.drive_path_resolver import DrivePathResolver
 from src.infrastructure.file_lifecycle_manager import FileLifecycleManager
@@ -33,31 +33,23 @@ def main() -> int:
     logger = structlog.get_logger()
     logger.info("consolidation_starting", config_path=config_path)
 
-    drive = GoogleDriveAdapter(credentials_path=config.google.credentials_path)
-
-    shared_drive_id = (
-        DrivePathResolver.detect_shared_drive(drive.service, config.google.shared_drive_name)
-        if config.google.shared_drive_name
-        else None
+    drive = OAuthGoogleDriveAdapter(
+        credentials_path=config.google.credentials_path,
+        token_path="credentials/token.json",
+        shared_drive_id=None,
     )
 
-    if shared_drive_id:
-        drive = GoogleDriveAdapter(
-            credentials_path=config.google.credentials_path,
-            shared_drive_id=shared_drive_id,
-        )
-
-    path_resolver = DrivePathResolver(drive.service, shared_drive_id)
+    path_resolver = DrivePathResolver(drive.service, None)
     lifecycle = FileLifecycleManager(
         drive_service=drive.service,
         path_resolver=path_resolver,
         config=config.drive,
-        shared_drive_id=shared_drive_id,
+        shared_drive_id=None,
     )
     excel = OpenpyxlExcelHandler()
-    notifier = GmailNotifier(
+    notifier = OAuthGmailNotifier(
         credentials_path=config.google.credentials_path,
-        delegated_user=config.google.delegated_user,
+        token_path="credentials/token.json",
         sender=config.email.sender,
         templates_dir=Path("src/templates"),
     )

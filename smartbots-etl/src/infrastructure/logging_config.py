@@ -4,6 +4,9 @@ import structlog
 
 
 def setup_logging(log_level: str = "INFO", log_dir: Path | None = None) -> None:
+    level_map = {"DEBUG": 10, "INFO": 20, "WARNING": 30, "ERROR": 40, "CRITICAL": 50}
+    level = level_map.get(log_level.upper(), 20)
+
     processors: list[structlog.types.Processor] = [
         structlog.contextvars.merge_contextvars,
         structlog.processors.add_log_level,
@@ -20,9 +23,7 @@ def setup_logging(log_level: str = "INFO", log_dir: Path | None = None) -> None:
 
     structlog.configure(
         processors=processors,
-        wrapper_class=structlog.make_filtering_bound_logger(
-            structlog.get_level_from_name(log_level)
-        ),
+        wrapper_class=structlog.make_filtering_bound_logger(level),
         context_class=dict,
         logger_factory=structlog.PrintLoggerFactory(),
         cache_logger_on_first_use=True,

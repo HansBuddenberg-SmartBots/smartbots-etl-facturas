@@ -21,11 +21,11 @@ logger = structlog.get_logger()
 class FixedCells(BaseModel):
     """Celdas fijas del archivo origen."""
 
-    empresa_transporte: str | None = Field(None, alias="B6")
-    fecha_emision: str | None = Field(None, alias="B7")
-    numero_factura: str | None = Field(None, alias="B8")
-    nave: str | None = Field(None, alias="H6")
-    puerto_embarque: str | None = Field(None, alias="H7")
+    empresa_transporte: str | None = Field(None, alias="C6")
+    fecha_emision: str | None = Field(None, alias="G3")
+    numero_factura: str | None = Field(None, alias="C8")
+    nave: str | None = Field(None, alias="G6")
+    puerto_embarque: str | None = Field(None, alias="G7")
     responsable: str | None = Field(None, alias="F4")
 
     @property
@@ -75,11 +75,11 @@ class OfficialFormatExtractor:
     """
 
     FIXED_CELLS = {
-        "B6": "empresa_transporte",
-        "B7": "fecha_emision",
-        "B8": "numero_factura",
-        "H6": "nave",
-        "H7": "puerto_embarque",
+        "C6": "empresa_transporte",
+        "G3": "fecha_emision",
+        "C8": "numero_factura",
+        "G6": "nave",
+        "G7": "puerto_embarque",
         "F4": "responsable",  # Tiene "Aprobado por: " prefix
     }
 
@@ -129,7 +129,13 @@ class OfficialFormatExtractor:
                 if row.isna().all():
                     continue
 
+                row_values_str = " ".join([str(v).upper() for v in row.values if not pd.isna(v)])
+                if any(kw in row_values_str for kw in ["NETO", "IVA", "TOTAL"]):
+                    logger.debug("skipping_summary_row", row_index=idx, content=row_values_str)
+                    continue
+
                 row_dict = row.to_dict()
+                row_dict = {k: (None if pd.isna(v) else v) for k, v in row_dict.items()}
                 tabular = TabularRow.model_validate(row_dict)
 
                 total = self._calculate_total(tabular)
@@ -149,7 +155,7 @@ class OfficialFormatExtractor:
                 records.append(record)
 
             except ValidationError as e:
-                error_msg = f"Validation Error: {str(e)}"
+                error_msg = f"Validation Error: {e!s}"
                 self.validation_errors.append(
                     {"file": file_path.name, "row_index": int(idx), "error": error_msg}
                 )
@@ -336,11 +342,11 @@ class OfficialFormatExtractor:
             return str(val)
 
         cells = {
-            "B6": _to_str(ws["B6"].value),
-            "B7": _to_str(ws["B7"].value),
-            "B8": _to_str(ws["B8"].value),
-            "H6": _to_str(ws["H6"].value),
-            "H7": _to_str(ws["H7"].value),
+            "C6": _to_str(ws["C6"].value),
+            "G3": _to_str(ws["G3"].value),
+            "C8": _to_str(ws["C8"].value),
+            "G6": _to_str(ws["G6"].value),
+            "G7": _to_str(ws["G7"].value),
             "F4": _to_str(ws["F4"].value),
         }
 
@@ -383,19 +389,30 @@ class OfficialFormatExtractor:
 
         return " | ".join(parts) if parts else ""
 
-    def _parse_date(self, value: str | None) -> date:
-        """Parsea fecha desde formato dd-mm-yyyy."""
+    def _parse_date(self, value: Any) -> date:
+        """Parsea fecha manejando strings, datetimes y timestamps."""
         if not value:
             raise ValueError("Date value is empty or None")
 
-        value = str(value).strip()
+        if isinstance(value, (datetime, date)):
+            if isinstance(value, datetime):
+                return value.date()
+            return value
 
-        formats = ["%d-%m-%Y", "%d-%m-%y", "%Y-%m-%d"]
+        value_str = str(value).strip()
+
+        formats = [
+            "%d-%m-%Y",
+            "%d-%m-%y",
+            "%Y-%m-%d",
+            "%Y-%m-%d %H:%M:%S",
+            "%Y-%m-%dT%H:%M:%S",
+        ]
         for fmt in formats:
             try:
-                return datetime.strptime(value, fmt).date()
+                return datetime.strptime(value_str, fmt).date()
             except ValueError:
                 continue
 
         # Si no se puede parsear, lanzar ValueError
-        raise ValueError(f"Formato de fecha inválido: {value}")
+        raise ValueError(f"Formato de fecha inválido: {value!s}")

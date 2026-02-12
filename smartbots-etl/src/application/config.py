@@ -12,8 +12,7 @@ import yaml
 @dataclass(frozen=True)
 class GoogleConfig:
     credentials_path: str
-    shared_drive_name: str = ""
-    delegated_user: str = ""
+    token_path: str = "./credentials/token.json"
 
 
 @dataclass(frozen=True)
@@ -29,6 +28,9 @@ class DrivePathsConfig:
 class ExcelConfig:
     source_sheet: str = "Sheet1"
     consolidated_sheet: str = "Consolidado"
+    header_row: int = 11
+    data_start_row: int = 12
+    skip_schema_validation: bool = False
     expected_columns: tuple[str, ...] = (
         "N° Factura",
         "N° Referencia",
