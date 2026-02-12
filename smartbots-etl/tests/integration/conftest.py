@@ -63,11 +63,88 @@ CONSOLIDATED_COLUMNS = [
 def create_source_xlsx(
     path: Path,
     rows: list[dict],
-    sheet_name: str = "Sheet1",
+    sheet_name: str = "DETALLE FACTURACIÓN CONTENEDORE",
+    startrow: int = 10,
 ) -> Path:
-    """Create a source XLSX file with Spanish column names."""
+    """Create a source XLSX file with Spanish column names.
+
+    Defaults to startrow=10 (row 11) to match OfficialFormatExtractor expectations.
+    """
     df = pd.DataFrame(rows, columns=SOURCE_COLUMNS)
-    df.to_excel(path, sheet_name=sheet_name, index=False, engine="openpyxl")
+    df.to_excel(path, sheet_name=sheet_name, index=False, engine="openpyxl", startrow=startrow)
+    return path
+
+
+def create_mixed_format_source_xlsx(
+    path: Path,
+    fixed_cells: dict[str, str | int | None],
+    tabular_rows: list[dict],
+    sheet_name: str = "DETALLE FACTURACIÓN CONTENEDORE",
+) -> Path:
+    """Create a source XLSX file with mixed format (fixed cells + tabular data).
+
+    Fixed cells layout:
+    - B6: Empresa Transporte
+    - B7: Fecha Emisión
+    - B8: N° Factura
+    - H6: Nave
+    - H7: Puerto Embarque
+    - F4: Aprobado por
+
+    Tabular data starts at row 11.
+    """
+    from openpyxl import Workbook
+    from openpyxl.utils.dataframe import dataframe_to_rows
+
+    wb = Workbook()
+    ws = wb.active
+    ws.title = sheet_name
+
+    ws["B6"] = fixed_cells.get("empresa_transporte")
+    ws["B7"] = fixed_cells.get("fecha_emision")
+    ws["B8"] = fixed_cells.get("numero_factura")
+    ws["H6"] = fixed_cells.get("nave")
+    ws["H7"] = fixed_cells.get("puerto_embarque")
+    ws["F4"] = fixed_cells.get("aprobado_por")
+
+    tabular_columns = [
+        "Fecha Servicio",
+        "Unidad",
+        "Conductor",
+        "Contenedor",
+        "Patente Camión",
+        "Patente Carro",
+        "Órdenes de Embarque",
+        "Plantas",
+        "Guías de Despacho",
+        "Cantidad Pallets",
+        "Flete($)",
+        "Underslung($)",
+        "Planta Adicional ($)",
+        "Retiro Cruzado ($)",
+        "Porteo($)",
+        "Hora Llegada Planta",
+        "Hora Salida Planta",
+        "Horas Sobre Estadía Planta",
+        "Sobre Estadía Planta ($)",
+        "Hora Llegada Puerto",
+        "Hora Salida Puerto",
+        "Horas Sobre Estadía Puerto",
+        "Sobre Estadía Puerto ($)",
+        "Fecha Gate In",
+        "Fecha Gate Out",
+        "Total Servicio ($)",
+    ]
+
+    for col_idx, col_name in enumerate(tabular_columns, start=1):
+        ws.cell(row=11, column=col_idx, value=col_name)
+
+    for row_idx, row_data in enumerate(tabular_rows, start=12):
+        for col_idx, col_name in enumerate(tabular_columns, start=1):
+            value = row_data.get(col_name)
+            ws.cell(row=row_idx, column=col_idx, value=value)
+
+    wb.save(path)
     return path
 
 
@@ -75,13 +152,22 @@ def create_consolidated_xlsx(
     path: Path,
     rows: list[dict] | None = None,
     sheet_name: str = "Consolidado",
+    header_row: int = 0,
 ) -> Path:
     """Create a consolidated XLSX file with standard column names."""
     if rows:
         df = pd.DataFrame(rows, columns=CONSOLIDATED_COLUMNS)
     else:
         df = pd.DataFrame(columns=CONSOLIDATED_COLUMNS)
-    df.to_excel(path, sheet_name=sheet_name, index=False, engine="openpyxl")
+
+    start_row = header_row - 1 if header_row > 0 else 0
+    df.to_excel(
+        path,
+        sheet_name=sheet_name,
+        index=False,
+        engine="openpyxl",
+        startrow=start_row,
+    )
     return path
 
 
@@ -216,7 +302,10 @@ def app_config(tmp_path: Path) -> AppConfig:
             consolidated_path="Consolidado",
             consolidated_filename="consolidado.xlsx",
         ),
-        excel=ExcelConfig(),
+        excel=ExcelConfig(
+            skip_schema_validation=True,
+            source_sheet="DETALLE FACTURACIÓN CONTENEDORE",
+        ),
         email=EmailConfig(
             sender="etl@smartbots.cl",
             to=("admin@smartbots.cl",),

@@ -53,6 +53,106 @@ def _valid_source_rows() -> list[dict]:
     ]
 
 
+def _valid_mixed_format_fixed_cells() -> dict:
+    return {
+        "empresa_transporte": "Transportes Chile Ltda",
+        "fecha_emision": "15-01-2026",
+        "numero_factura": "FAC-001",
+        "nave": "MSC GÜLSÜN",
+        "puerto_embarque": "San Antonio",
+        "aprobado_por": "Aprobado por: Juan Pérez",
+    }
+
+
+def _valid_mixed_format_tabular_rows() -> list[dict]:
+    return [
+        {
+            "Fecha Servicio": "15-01-2026",
+            "Unidad": "ABC123",
+            "Conductor": "Pedro García",
+            "Contenedor": "MSCU1234567",
+            "Patente Camión": "AB1234",
+            "Patente Carro": "CD5678",
+            "Órdenes de Embarque": "OE-001",
+            "Plantas": "Planta Norte",
+            "Guías de Despacho": "GD-001",
+            "Cantidad Pallets": 10,
+            "Flete($)": 100000,
+            "Underslung($)": 0,
+            "Planta Adicional ($)": 0,
+            "Retiro Cruzado ($)": 0,
+            "Porteo($)": 0,
+            "Hora Llegada Planta": "08:00",
+            "Hora Salida Planta": "10:00",
+            "Horas Sobre Estadía Planta": 0,
+            "Sobre Estadía Planta ($)": 0,
+            "Hora Llegada Puerto": "12:00",
+            "Hora Salida Puerto": "14:00",
+            "Horas Sobre Estadía Puerto": 0,
+            "Sobre Estadía Puerto ($)": 0,
+            "Fecha Gate In": "15-01-2026",
+            "Fecha Gate Out": "16-01-2026",
+            "Total Servicio ($)": 100000,
+        },
+        {
+            "Fecha Servicio": "16-01-2026",
+            "Unidad": "DEF456",
+            "Conductor": "María López",
+            "Contenedor": "MSCU7654321",
+            "Patente Camión": "EF9012",
+            "Patente Carro": "GH3456",
+            "Órdenes de Embarque": "OE-002",
+            "Plantas": "Planta Sur",
+            "Guías de Despacho": "GD-002",
+            "Cantidad Pallets": 20,
+            "Flete($)": 200000,
+            "Underslung($)": 0,
+            "Planta Adicional ($)": 0,
+            "Retiro Cruzado ($)": 0,
+            "Porteo($)": 0,
+            "Hora Llegada Planta": "09:00",
+            "Hora Salida Planta": "11:00",
+            "Horas Sobre Estadía Planta": 0,
+            "Sobre Estadía Planta ($)": 0,
+            "Hora Llegada Puerto": "13:00",
+            "Hora Salida Puerto": "15:00",
+            "Horas Sobre Estadía Puerto": 0,
+            "Sobre Estadía Puerto ($)": 0,
+            "Fecha Gate In": "16-01-2026",
+            "Fecha Gate Out": "17-01-2026",
+            "Total Servicio ($)": 200000,
+        },
+        {
+            "Fecha Servicio": "17-01-2026",
+            "Unidad": "GHI789",
+            "Conductor": "Carlos Ruiz",
+            "Contenedor": "MSCU1112222",
+            "Patente Camión": "IJ7890",
+            "Patente Carro": "KL1234",
+            "Órdenes de Embarque": "OE-003",
+            "Plantas": "Planta Centro",
+            "Guías de Despacho": "GD-003",
+            "Cantidad Pallets": 15,
+            "Flete($)": 150000,
+            "Underslung($)": 0,
+            "Planta Adicional ($)": 0,
+            "Retiro Cruzado ($)": 0,
+            "Porteo($)": 0,
+            "Hora Llegada Planta": "10:00",
+            "Hora Salida Planta": "12:00",
+            "Horas Sobre Estadía Planta": 0,
+            "Sobre Estadía Planta ($)": 0,
+            "Hora Llegada Puerto": "14:00",
+            "Hora Salida Puerto": "16:00",
+            "Horas Sobre Estadía Puerto": 0,
+            "Sobre Estadía Puerto ($)": 0,
+            "Fecha Gate In": "17-01-2026",
+            "Fecha Gate Out": "18-01-2026",
+            "Total Servicio ($)": 150000,
+        },
+    ]
+
+
 def _register_source(fake_drive, tmp_path, filename, rows, modified_time=None):
     path = tmp_path / filename
     create_source_xlsx(path, rows)
@@ -65,22 +165,44 @@ def _register_source(fake_drive, tmp_path, filename, rows, modified_time=None):
     }
 
 
+def _register_mixed_source(
+    fake_drive, tmp_path, filename, fixed_cells, tabular_rows, modified_time=None
+):
+    from tests.integration.conftest import create_mixed_format_source_xlsx
+
+    path = tmp_path / filename
+    create_mixed_format_source_xlsx(path, fixed_cells, tabular_rows)
+    file_id = f"src_{filename}"
+    fake_drive.register(file_id, path)
+    return {
+        "file_id": file_id,
+        "name": filename,
+        "modified_time": modified_time or "2026-01-15T10:00:00Z",
+    }
+
+
 def _register_consolidated(fake_drive, tmp_path, rows=None):
     path = tmp_path / "consolidado.xlsx"
-    create_consolidated_xlsx(path, rows)
+    create_consolidated_xlsx(path, rows, header_row=11)
     fake_drive.register("consolidated_file_id", path)
     fake_drive.set_find_result("consolidado.xlsx", "consolidated_file_id")
     return path
 
 
 def _read_result(consolidated_path: Path) -> pd.DataFrame:
-    return pd.read_excel(consolidated_path, sheet_name="Consolidado", engine="openpyxl")
+    return pd.read_excel(consolidated_path, sheet_name="Consolidado", engine="openpyxl", header=10)
 
 
 class TestSuccessFreshConsolidation:
     def test_fresh_insert_three_rows(self, tmp_path, fake_drive, fake_notifier, build_use_case):
         sources = [
-            _register_source(fake_drive, tmp_path, "facturas_enero.xlsx", _valid_source_rows())
+            _register_mixed_source(
+                fake_drive,
+                tmp_path,
+                "facturas_enero.xlsx",
+                _valid_mixed_format_fixed_cells(),
+                _valid_mixed_format_tabular_rows(),
+            )
         ]
         fake_drive.set_source_files(sources)
         consolidated_path = _register_consolidated(fake_drive, tmp_path)
@@ -99,7 +221,7 @@ class TestSuccessFreshConsolidation:
 
         df = _read_result(consolidated_path)
         assert len(df) == 3
-        assert set(df["invoice_number"]) == {"FAC-001", "FAC-002", "FAC-003"}
+        assert set(df["invoice_number"]) == {"FAC-001"}
 
         assert len(fake_notifier.calls) == 1
         assert "SUCCESS" in fake_notifier.calls[0]["subject"]
@@ -173,11 +295,15 @@ class TestUpsertUpdatesAndPreserves:
         assert len(df) == 3
         assert set(df["invoice_number"]) == {"FAC-001", "FAC-004", "FAC-005"}
 
+        # Append-only behavior: FAC-001 was updated in source, but Excel remains UNTOUCHED
         fac001 = df[df["invoice_number"] == "FAC-001"].iloc[0]
-        assert float(fac001["total_amount"]) == 142800.0
+        assert float(fac001["total_amount"]) == 119000.0  # Kept OLD value
 
         fac004 = df[df["invoice_number"] == "FAC-004"].iloc[0]
         assert float(fac004["total_amount"]) == 297500.0
+
+        fac005 = df[df["invoice_number"] == "FAC-005"].iloc[0]
+        assert float(fac005["total_amount"]) == 357000.0
 
 
 class TestPartialMixedFiles:
@@ -303,7 +429,7 @@ class TestRowValidationErrors:
         report = build_use_case().execute()
 
         assert report.status == "SUCCESS"
-        assert report.source_row_count == 3
+        assert report.source_row_count == 2
         assert report.valid_row_count == 2
         assert report.inserted_count == 2
         assert len(report.validation_errors) == 1

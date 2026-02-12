@@ -19,6 +19,7 @@ from src.application.dtos import ExecutionReport, UpsertResult
 from src.application.transformers import RowTransformer
 from src.infrastructure.drive_path_resolver import DrivePathResolver
 from src.infrastructure.file_lifecycle_manager import FileLifecycleManager
+from src.infrastructure.official_format_extractor import OfficialFormatExtractor
 
 logger = structlog.get_logger()
 
@@ -139,44 +140,59 @@ class ConsolidateInvoicesUseCase:
             local_source = Path(f"/tmp/{source_file['name']}")
             self.drive.download_file(source_file["file_id"], local_source)
 
-            df_source = self.reader.read(local_source, self.config.excel.source_sheet)
-            is_valid, missing, extra = self.reader.validate_schema(
-                df_source, list(self.config.excel.expected_columns)
-            )
+            extractor = OfficialFormatExtractor(self.config.excel)
+            source_records = extractor.extract(local_source)
+            row_errors = extractor.validation_errors
+            is_valid = len(row_errors) == 0
+            missing = []
+            extra = []
             self.tracker.log_file_schema(file_log_id, is_valid, missing, extra)
-
-            if not is_valid:
-                raise SchemaValidationError(missing, extra)
-
-            source_records, row_errors = self._validate_and_transform(
-                df_source,
-                source_file["name"],
-                transformer,
-                run_id,
-                file_log_id,
-            )
-            report.source_row_count += len(df_source)
+            report.source_row_count += len(source_records)
             report.valid_row_count += len(source_records)
             report.validation_errors.extend(row_errors)
 
             local_consolidated = Path("/tmp/consolidado.xlsx")
             self.drive.download_file(consolidated_file_id, local_consolidated)
             df_consolidated = self.reader.read(
-                local_consolidated, self.config.excel.consolidated_sheet
+                local_consolidated,
+                self.config.excel.consolidated_sheet,
+                header_row=self.config.excel.header_row,
             )
             consolidated_records = self._dataframe_to_records(df_consolidated, transformer)
 
             upsert_result = self._upsert(consolidated_records, source_records)
             self._log_upsert_records(run_id, file_log_id, source_records, upsert_result)
+
+            # Log validation errors to tracker
+            if row_errors:
+                error_batch = [
+                    {
+                        "run_uuid": run_id,
+                        "file_log_id": file_log_id,
+                        "row_index": err["row_index"],
+                        "invoice_number": None,
+                        "reference_number": None,
+                        "action": "VALIDATION_ERROR",
+                        "error_message": err["error"],
+                    }
+                    for err in row_errors
+                ]
+                self.tracker.log_records_batch(error_batch)
+
             self._reconcile(report, source_records, upsert_result)
 
-            df_result = self._records_to_dataframe(upsert_result.all_records)
-            self.writer.write(
-                df_result,
-                local_consolidated,
-                self.config.excel.consolidated_sheet,
-            )
-            self.drive.update_file(consolidated_file_id, local_consolidated)
+            new_records = [r for r in upsert_result.all_records if r.status == RecordStatus.NEW]
+            df_inserts = self._records_to_dataframe(new_records)
+
+            if not df_inserts.empty:
+                self.writer.write(
+                    df_inserts,
+                    local_consolidated,
+                    self.config.excel.consolidated_sheet,
+                    header_row=self.config.excel.header_row,
+                    data_start_row=self.config.excel.data_start_row,
+                )
+                self.drive.update_file(consolidated_file_id, local_consolidated)
 
             report.inserted_count += upsert_result.inserted
             report.updated_count += upsert_result.updated
@@ -187,7 +203,7 @@ class ConsolidateInvoicesUseCase:
             self.tracker.log_file_finish(
                 file_log_id,
                 "COMPLETED",
-                rows_total=len(df_source),
+                rows_total=len(source_records),
                 rows_valid=len(source_records),
                 rows_error=len(row_errors),
                 error_message=None,
@@ -263,6 +279,8 @@ class ConsolidateInvoicesUseCase:
         existing_map: dict[tuple, InvoiceRecord] = {r.primary_key: r for r in existing}
         result = UpsertResult()
 
+        logger.debug("upsert_start", existing_count=len(existing), incoming_count=len(incoming))
+
         for record in incoming:
             pk = record.primary_key
             if pk in existing_map:
@@ -270,12 +288,20 @@ class ConsolidateInvoicesUseCase:
                 if record.has_changes_vs(old):
                     existing_map[pk] = record.with_status(RecordStatus.UPDATED)
                     result.updated += 1
+                    logger.debug("upsert_updated", pk=pk)
                 else:
                     existing_map[pk] = old.with_status(RecordStatus.UNCHANGED)
                     result.unchanged += 1
+                    logger.debug("upsert_unchanged", pk=pk)
             else:
                 existing_map[pk] = record.with_status(RecordStatus.NEW)
                 result.inserted += 1
+                logger.debug(
+                    "upsert_inserted",
+                    pk=pk,
+                    invoice=record.invoice_number,
+                    ref=record.reference_number,
+                )
 
         result.all_records = list(existing_map.values())
         return result
@@ -346,7 +372,8 @@ class ConsolidateInvoicesUseCase:
         records = []
         for _, row in df.iterrows():
             try:
-                records.append(transformer.transform_row(row, source_name="consolidado"))
+                record = transformer.transform_row(row, source_name="consolidado")
+                records.append(record.with_status(RecordStatus.UNCHANGED))
             except Exception:
                 continue
         return records
