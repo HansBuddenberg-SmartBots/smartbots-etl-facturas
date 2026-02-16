@@ -37,11 +37,10 @@ excel:
 
 # === Email (Gmail API) ===
 email:
-  sender: "h.buddenberg@gmail.com"
-  to:
-    - "h.buddenberg@gmail.com"
-  cc: []
-  bcc: []
+  sender: "facturasproveedores@santaelena.com"
+  to: "goliverz1995@gmail.com"
+  cc: "h.buddenberg@gmail.com"
+  bcc: ""
   subject_prefix: "Consolidacion Facturas"
   templates:
     success: "ETL_Consolidacion_Exito.html"

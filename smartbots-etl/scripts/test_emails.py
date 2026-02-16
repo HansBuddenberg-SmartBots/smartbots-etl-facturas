@@ -137,6 +137,7 @@ def main() -> int:
     print("ENVÍO DE EMAILS DE PRUEBA")
     print("=" * 60)
     print(f"Destinatarios: {list(config.email.to)}")
+    print(f"CC: {list(config.email.cc)}")
     print(f"Remitente: {config.email.sender}")
     print("=" * 60)
 

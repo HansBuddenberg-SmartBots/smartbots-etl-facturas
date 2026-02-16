@@ -162,12 +162,16 @@ def _build_excel_config(data: dict[str, Any]) -> ExcelConfig:
 
 
 def _build_email_config(data: dict[str, Any]) -> EmailConfig:
-    """Construye EmailConfig, convirtiendo listas a tuplas para frozen dataclass."""
-    data = dict(data)  # shallow copy
+    """Construye EmailConfig, parseando strings separados por comas a tuplas."""
+    data = dict(data)
     if "sender" not in data:
         msg = "email.sender es requerido"
         raise ValueError(msg)
     for key in ("to", "cc", "bcc"):
         if key in data:
-            data[key] = tuple(data[key])
+            value = data[key]
+            if isinstance(value, str):
+                data[key] = tuple(email.strip() for email in value.split(",") if email.strip())
+            elif isinstance(value, list):
+                data[key] = tuple(value)
     return EmailConfig(**data)
