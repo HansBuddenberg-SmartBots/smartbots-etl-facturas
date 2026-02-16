@@ -12,7 +12,7 @@ drive:
   source_path: "Bot RPA/Operaciones/Consolidacion facturas"  # Carpeta principal donde se encuentran los archivos de facturas
   in_process_folder: "En Proceso"          # Subcarpeta dentro de source_path
   backup_path: "Respaldo"                  # Subcarpeta dentro de source_path
-  consolidated_path: "Bot RPA/Operaciones/Consolidacion facturas/Consolidado"
+  consolidated_path: "Consolidado"
   consolidated_filename: "CONSOLIDADO DE FACTURAS.xlsx"
 
 # === Excel ===
@@ -42,7 +42,7 @@ email:
     - "h.buddenberg@gmail.com"
   cc: []
   bcc: []
-  subject_prefix: "[Smartbots ETL]"
+  subject_prefix: "Consolidacion Facturas"
   templates:
     success: "ETL_Consolidacion_Exito.html"
     partial: "ETL_Consolidacion_Parcial.html"

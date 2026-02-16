@@ -66,14 +66,16 @@ class ConsolidateInvoicesUseCase:
             logger.debug(f"{'=' * 80}")
             logger.debug("DEBUG: Resolviendo carpetas en Google Drive...")
             logger.debug(f"  → Carpeta origen (source): {self.config.drive.source_path}")
-            logger.debug(f"  → Carpeta consolidado: {self.config.drive.consolidated_path}")
+
+            consolidated_full_path = (
+                f"{self.config.drive.source_path}/{self.config.drive.consolidated_path}"
+            )
+            logger.debug(f"  → Carpeta consolidado: {consolidated_full_path}")
 
             source_folder_id = self.path_resolver.ensure_path(self.config.drive.source_path)
             logger.debug(f"  → ID carpeta origen: {source_folder_id}")
 
-            consolidated_folder_id = self.path_resolver.ensure_path(
-                self.config.drive.consolidated_path
-            )
+            consolidated_folder_id = self.path_resolver.ensure_path(consolidated_full_path)
             logger.debug(f"  → ID carpeta consolidado: {consolidated_folder_id}")
             logger.debug(f"{'=' * 80}\n")
 
@@ -84,7 +86,7 @@ class ConsolidateInvoicesUseCase:
             if not consolidated_file_id:
                 raise FileNotFoundError(
                     f"Consolidado '{self.config.drive.consolidated_filename}' "
-                    f"no encontrado en '{self.config.drive.consolidated_path}'"
+                    f"no encontrado en '{consolidated_full_path}'"
                 )
 
             source_files = self.drive.list_source_files(source_folder_id)
