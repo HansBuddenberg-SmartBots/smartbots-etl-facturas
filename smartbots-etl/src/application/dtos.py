@@ -28,6 +28,7 @@ class ExecutionReport:
     source_files: list[str] = field(default_factory=list)
     files_with_errors: list[str] = field(default_factory=list)
     backup_file_id: Optional[str] = None
+    backup_folder_id: Optional[str] = None
     rollback_executed: bool = False
 
     # Counters
