@@ -36,6 +36,14 @@ infrastructure/
 - **Dependency Inversion**: Infra depende de Application ports, no al revés
 - **Structured Logging**: structlog con JSON para producción
 
+## Anti-Patrones (NO hacer)
+
+| Patrón | Problema |
+|--------|----------|
+| Exponer credenciales en logs | Usar structlog sin datos sensibles |
+| `except Exception` sin re-raise | Logging + propagación correcta |
+| Manipular strings hardcodeados | Usar parsing adecuado |
+
 ## Ejemplos
 
 ```python

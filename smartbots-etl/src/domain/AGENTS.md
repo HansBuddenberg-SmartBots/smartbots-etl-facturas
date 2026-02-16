@@ -23,9 +23,17 @@ domain/
 
 ## Patrones
 
-- **Immutabilidad**: Todas las entidades usan `@dataclass(frozen=True, kw_only=True)`
+- **Inmutabilidad**: Todas las entidades usan `@dataclass(frozen=True, kw_only=True)`
 - **Validación cruzada**: __post_init__ valida invariants de negocio
 - **Valor objects**: Money para cálculos financieros precisos con Decimal
+
+## Anti-Patrones (NO hacer)
+
+| Patrón | Problema |
+|--------|----------|
+| `float` para montos | Pérdida precisión - usar `Decimal` |
+| `Optional[X]` | Python 3.10+ usar `X \| None` |
+| Lógica de negocio en entidades | Solo validación, lógica en application/use_cases |
 
 ## Ejemplos
 
