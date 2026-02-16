@@ -1,18 +1,21 @@
 # ============================================================
-# Configuración ETL Consolidación de Facturas - Santa Elena
+# ETL Invoice Consolidation Configuration Template
+# Configuración Plantilla ETL Consolidación de Facturas
 # ============================================================
+# Copy this file to configuration.yaml and fill in your values
+# Copie este archivo a configuration.yaml y complete sus valores
 
 # === Google APIs ===
 google:
   credentials_path: "./credentials/credentials.json"
   token_path: "./credentials/token.json"
 
-# === Rutas en Google Drive ===
+# === Google Drive Paths ===
 drive:
-  source_path: "Bot RPA/Operaciones/Consolidacion facturas"  # Carpeta principal donde se encuentran los archivos de facturas
-  in_process_folder: "En Proceso"          # Subcarpeta dentro de source_path
-  backup_path: "Respaldo"                  # Subcarpeta dentro de source_path
-  consolidated_path: "Consolidado"
+  source_path: "Bot RPA/Operaciones/Consolidacion facturas"  # Main folder for invoice files
+  in_process_folder: "En Proceso"          # Subfolder within source_path
+  backup_path: "Respaldo"                  # Subfolder within source_path
+  consolidated_path: "Consolidado"         # Subfolder within source_path
   consolidated_filename: "CONSOLIDADO DE FACTURAS.xlsx"
 
 # === Excel ===
@@ -37,9 +40,9 @@ excel:
 
 # === Email (Gmail API) ===
 email:
-  sender: "facturasproveedores@santaelena.com"
-  to: "goliverz1995@gmail.com"
-  cc: "h.buddenberg@gmail.com"
+  sender: "your-email@gmail.com"
+  to: "recipient1@example.com, recipient2@example.com"
+  cc: "cc1@example.com"
   bcc: ""
   subject_prefix: "Consolidacion Facturas"
   templates:
@@ -52,12 +55,12 @@ email:
 tracking:
   db_path: "data/etl_tracking.db"
 
-# === Descargas locales ===
+# === Local Downloads ===
 downloads:
-  temp_path: "downloads"  # Ruta para archivos temporales descargados
+  temp_path: "downloads"
 
 # === Logging ===
 logging:
-  level: "DEBUG"  # Cambiar a INFO en producción
+  level: "INFO"  # Change to DEBUG for development
   log_to_file: true
   log_dir: "logs"

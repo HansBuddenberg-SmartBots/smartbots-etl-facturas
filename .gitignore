@@ -17,3 +17,26 @@ drive-download-*/
 
 # Sisyphus
 .sisyphus/
+
+# Credentials (SECURITY - NEVER COMMIT)
+credentials/
+**/credentials/
+**/credentials.json
+**/token.json
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+.venv/
+venv/
+
+# Logs
+logs/
+*.log
+
+# Local config (contains real emails and credentials)
+configuration.yaml
+!configuration.yaml.template
