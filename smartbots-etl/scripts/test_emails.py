@@ -127,10 +127,10 @@ def main() -> int:
 
     # Mapeo de tipos de email
     email_tests = [
-        ("SUCCESS", create_success_report, "ETL_Consolidacion_Exito.html"),
-        ("PARTIAL", create_partial_report, "ETL_Consolidacion_Parcial.html"),
-        ("ERROR", create_error_report, "ETL_Consolidacion_Error.html"),
-        ("NO_FILES", create_no_files_report, "ETL_Consolidacion_Vacio.html"),
+        ("SUCCESS", create_success_report, "ETL_Consolidacion_Exito.html", "EXITOSO"),
+        ("PARTIAL", create_partial_report, "ETL_Consolidacion_Parcial.html", "ADVERTENCIA"),
+        ("ERROR", create_error_report, "ETL_Consolidacion_Error.html", "ERROR"),
+        ("NO_FILES", create_no_files_report, "ETL_Consolidacion_Vacio.html", "SIN ARCHIVOS"),
     ]
 
     print("=" * 60)
@@ -141,9 +141,9 @@ def main() -> int:
     print(f"Remitente: {config.email.sender}")
     print("=" * 60)
 
-    for status, report_factory, template in email_tests:
+    for status, report_factory, template, status_label in email_tests:
         report = report_factory()
-        subject = f"{config.email.subject_prefix} TEST [{status}] — {report.run_id[:8]}"
+        subject = f"{config.email.subject_prefix} - {status_label}"
 
         print(f"\n→ Enviando email [{status}]...")
         print(f"   Template: {template}")

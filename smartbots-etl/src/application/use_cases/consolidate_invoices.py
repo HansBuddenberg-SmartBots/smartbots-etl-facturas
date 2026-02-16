@@ -641,11 +641,18 @@ class ConsolidateInvoicesUseCase:
         self._send_notification(report)
 
     def _send_notification(self, report: ExecutionReport) -> None:
+        STATUS_LABELS = {
+            "SUCCESS": "EXITOSO",
+            "PARTIAL": "ADVERTENCIA",
+            "ERROR": "ERROR",
+            "NO_FILES": "SIN ARCHIVOS",
+        }
         template_key = TEMPLATE_MAP.get(report.status, "error")
         template_name = self.config.email.templates.get(
             template_key, "ETL_Consolidacion_Error.html"
         )
-        subject = f"{self.config.email.subject_prefix} {report.status} — {report.run_id[:8]}"
+        status_label = STATUS_LABELS.get(report.status, report.status)
+        subject = f"{self.config.email.subject_prefix} - {status_label}"
         try:
             self.notifier.send(
                 subject=subject,
