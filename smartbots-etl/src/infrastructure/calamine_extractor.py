@@ -60,15 +60,21 @@ class CalamineExtractor:
 
                     # Crear InvoiceRecord
                     record = InvoiceRecord(
-                        invoice_number=str(idx),  # Usar índice como número de factura
-                        reference_number=self._get_cell_value(row_data, 6) or "",  # Columna G
+                        invoice_number=str(idx),
+                        reference_number=self._get_cell_value(row_data, 6) or "",
                         carrier_name=str(empresa),
+                        ship_name="",
+                        dispatch_guides="",
                         invoice_date=self._parse_date(fecha),
                         description="",
                         net_amount=Money(amount="0"),
                         tax_amount=Money(amount="0"),
                         total_amount=Money(amount=self._get_cell_value(row_data, -1) or "0"),
                         currency="CLP",
+                        fecha_recepcion_digital="",
+                        aprobado_por="",
+                        estado_operaciones="",
+                        fecha_aprobacion_operaciones="",
                         source_file=file_path.name,
                     )
                     records.append(record)

@@ -7,19 +7,16 @@ def setup_logging(log_level: str = "INFO", log_dir: Path | None = None) -> None:
     level_map = {"DEBUG": 10, "INFO": 20, "WARNING": 30, "ERROR": 40, "CRITICAL": 50}
     level = level_map.get(log_level.upper(), 20)
 
+    # Procesadores para estructurar los logs
     processors: list[structlog.types.Processor] = [
         structlog.contextvars.merge_contextvars,
         structlog.processors.add_log_level,
-        structlog.processors.TimeStamper(fmt="iso"),
+        structlog.processors.TimeStamper(fmt="%Y-%m-%d %H:%M:%S"),
         structlog.processors.StackInfoRenderer(),
         structlog.processors.format_exc_info,
+        # Custom renderer para formato legible en consola con colores
+        structlog.dev.ConsoleRenderer(colors=True),
     ]
-
-    if log_dir:
-        log_dir.mkdir(parents=True, exist_ok=True)
-        processors.append(structlog.processors.JSONRenderer())
-    else:
-        processors.append(structlog.dev.ConsoleRenderer())
 
     structlog.configure(
         processors=processors,
