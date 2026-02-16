@@ -4,9 +4,33 @@ import openpyxl
 import pandas as pd
 import structlog
 
+from openpyxl.styles import Alignment
+from copy import copy
+
 logger = structlog.get_logger()
 
 _FALLBACK_SHEET = "Sheet1"
+
+COLUMN_FORMATS = {
+    "N° Factura": {"number_format": "0", "alignment": Alignment(horizontal="center")},
+    "Empresa Transporte": {"alignment": Alignment(horizontal="center")},
+    "Nave": {"alignment": Alignment(horizontal="center")},
+    "Órdenes de Embarque": {"alignment": Alignment(horizontal="center")},
+    "Guías de Despacho": {"number_format": "0", "alignment": Alignment(horizontal="right")},
+    "Total Servicio ($)": {"number_format": '_ "$"* #,##0_ ;_ "$"* \-#,##0_ ;_ "$"* "-"_ ;_ @_ '},
+    "Fecha Emisión": {"number_format": "dd/mm/yyyy", "alignment": Alignment(horizontal="center")},
+    "Fecha Recepción Digital": {
+        "number_format": "dd/mm/yyyy",
+        "alignment": Alignment(horizontal="center"),
+    },
+    "Aprobado por:": {"alignment": Alignment(horizontal="center")},
+    "Estado Operaciones": {"alignment": Alignment(horizontal="center")},
+    "Fecha Aprobación Operaciones": {
+        "number_format": "dd/mm/yyyy",
+        "alignment": Alignment(horizontal="center"),
+    },
+    "Observaciones": {"alignment": Alignment(horizontal="left")},
+}
 
 
 class OpenpyxlExcelHandler:
@@ -39,9 +63,6 @@ class OpenpyxlExcelHandler:
         header_row: int = 0,
         data_start_row: int = 1,
     ) -> None:
-        from openpyxl.styles import Alignment, Border, Font, PatternFill
-        from copy import copy
-
         if not file_path.exists():
             df.to_excel(file_path, sheet_name=sheet_name, index=False, engine="openpyxl")
             logger.info("excel_created", path=str(file_path), rows=len(df))
@@ -61,9 +82,21 @@ class OpenpyxlExcelHandler:
                 next_row = self._find_next_empty_row(ws, min_row=data_start_row)
                 template_row = next_row - 1 if next_row > data_start_row else None
 
+            column_names = list(df.columns)
+
             for row_idx, row in enumerate(df.itertuples(index=False), start=next_row):
                 for col_idx, value in enumerate(row, start=1):
-                    cell = ws.cell(row=row_idx, column=col_idx, value=value)
+                    cell = ws.cell(row=row_idx, column=col_idx)
+
+                    col_name = column_names[col_idx - 1] if col_idx <= len(column_names) else None
+
+                    if col_name == "N° Factura" and value is not None:
+                        try:
+                            cell.value = int(float(str(value)))
+                        except (ValueError, TypeError):
+                            cell.value = value
+                    else:
+                        cell.value = value
 
                     if template_row and template_row >= data_start_row:
                         template_cell = ws.cell(row=template_row, column=col_idx)
@@ -71,9 +104,14 @@ class OpenpyxlExcelHandler:
                             cell.font = copy(template_cell.font)
                             cell.border = copy(template_cell.border)
                             cell.fill = copy(template_cell.fill)
-                            cell.number_format = template_cell.number_format
                             cell.protection = copy(template_cell.protection)
-                            cell.alignment = copy(template_cell.alignment)
+
+                    if col_name and col_name in COLUMN_FORMATS:
+                        fmt = COLUMN_FORMATS[col_name]
+                        if "number_format" in fmt:
+                            cell.number_format = fmt["number_format"]
+                        if "alignment" in fmt:
+                            cell.alignment = fmt["alignment"]
 
             wb.save(file_path)
             logger.info(
