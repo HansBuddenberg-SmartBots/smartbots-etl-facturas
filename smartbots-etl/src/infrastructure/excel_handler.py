@@ -39,6 +39,9 @@ class OpenpyxlExcelHandler:
         header_row: int = 0,
         data_start_row: int = 1,
     ) -> None:
+        from openpyxl.styles import Alignment, Border, Font, PatternFill
+        from copy import copy
+
         if not file_path.exists():
             df.to_excel(file_path, sheet_name=sheet_name, index=False, engine="openpyxl")
             logger.info("excel_created", path=str(file_path), rows=len(df))
@@ -48,18 +51,29 @@ class OpenpyxlExcelHandler:
         try:
             if sheet_name not in wb.sheetnames:
                 ws = wb.create_sheet(sheet_name)
-                # Write headers at header_row (or 1)
                 h_row = header_row if header_row > 0 else 1
                 for col_idx, col_name in enumerate(df.columns, start=1):
                     ws.cell(row=h_row, column=col_idx, value=col_name)
                 next_row = data_start_row if data_start_row > h_row else h_row + 1
+                template_row = None
             else:
                 ws = wb[sheet_name]
                 next_row = self._find_next_empty_row(ws, min_row=data_start_row)
+                template_row = next_row - 1 if next_row > data_start_row else None
 
             for row_idx, row in enumerate(df.itertuples(index=False), start=next_row):
                 for col_idx, value in enumerate(row, start=1):
-                    ws.cell(row=row_idx, column=col_idx, value=value)
+                    cell = ws.cell(row=row_idx, column=col_idx, value=value)
+
+                    if template_row and template_row >= data_start_row:
+                        template_cell = ws.cell(row=template_row, column=col_idx)
+                        if template_cell.has_style:
+                            cell.font = copy(template_cell.font)
+                            cell.border = copy(template_cell.border)
+                            cell.fill = copy(template_cell.fill)
+                            cell.number_format = template_cell.number_format
+                            cell.protection = copy(template_cell.protection)
+                            cell.alignment = copy(template_cell.alignment)
 
             wb.save(file_path)
             logger.info(

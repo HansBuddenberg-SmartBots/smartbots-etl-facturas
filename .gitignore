@@ -7,9 +7,13 @@
 # Data directories
 data/
 downloads/
+drive-download-*/
 .DS_Store
 
 # IDE
 .vscode/
 .zed/
 .idea/
+
+# Sisyphus
+.sisyphus/
