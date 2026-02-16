@@ -13,16 +13,28 @@ class RowTransformer:
     def transform_row(self, row: dict, source_name: str) -> InvoiceRecord:
         mapped = self._apply_column_mapping(row)
 
+        total = self._parse_money(mapped.get("total_amount", 0))
+        net = self._parse_money(mapped.get("net_amount", total))
+        tax = self._parse_money(mapped.get("tax_amount", Decimal("0")))
+
         return InvoiceRecord(
             invoice_number=self._clean_string(mapped["invoice_number"]),
             reference_number=self._clean_string(mapped["reference_number"]),
             carrier_name=self._clean_string(mapped["carrier_name"]),
+            ship_name=self._clean_string(mapped.get("ship_name", "")),
+            dispatch_guides=self._clean_string(mapped.get("dispatch_guides", "")),
             invoice_date=self._parse_date(mapped["invoice_date"]),
             description=self._clean_string(mapped.get("description", "")),
-            net_amount=self._parse_money(mapped["net_amount"]),
-            tax_amount=self._parse_money(mapped["tax_amount"]),
-            total_amount=self._parse_money(mapped["total_amount"]),
+            net_amount=net,
+            tax_amount=tax,
+            total_amount=total,
             currency=self._clean_string(mapped.get("currency", "CLP")).upper(),
+            fecha_recepcion_digital=self._clean_string(mapped.get("fecha_recepcion_digital", "")),
+            aprobado_por=self._clean_string(mapped.get("aprobado_por", "")),
+            estado_operaciones=self._clean_string(mapped.get("estado_operaciones", "")),
+            fecha_aprobacion_operaciones=self._clean_string(
+                mapped.get("fecha_aprobacion_operaciones", "")
+            ),
             source_file=source_name,
             processed_at=datetime.now(UTC),
         )
