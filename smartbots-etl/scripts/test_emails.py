@@ -26,7 +26,6 @@ from src.infrastructure.logging_config import setup_logging
 
 
 def create_success_report() -> ExecutionReport:
-    """Crea un report de ejemplo para SUCCESS."""
     report = ExecutionReport(run_id="test-success-12345678")
     report.status = "SUCCESS"
     report.timestamp = datetime.now(UTC)
@@ -39,11 +38,11 @@ def create_success_report() -> ExecutionReport:
     report.unchanged_count = 2
     report.source_total_amount = Decimal("2450000")
     report.output_total_amount = Decimal("2450000")
+    report.consolidated_file_id = "1ABC123DEF456GHI789JKL"
     return report
 
 
 def create_partial_report() -> ExecutionReport:
-    """Crea un report de ejemplo para PARTIAL."""
     report = ExecutionReport(run_id="test-partial-12345678")
     report.status = "PARTIAL"
     report.timestamp = datetime.now(UTC)
@@ -58,6 +57,7 @@ def create_partial_report() -> ExecutionReport:
     report.error_count = 5
     report.source_total_amount = Decimal("1800000")
     report.output_total_amount = Decimal("1800000")
+    report.consolidated_file_id = "1ABC123DEF456GHI789JKL"
     report.validation_errors = [
         {"file": "Factura_Transporte_02.xlsx", "row_index": 5, "error": "Fecha inválida"},
         {"file": "Factura_Transporte_02.xlsx", "row_index": 8, "error": "Monto negativo"},

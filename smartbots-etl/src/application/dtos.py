@@ -29,6 +29,7 @@ class ExecutionReport:
     files_with_errors: list[str] = field(default_factory=list)
     backup_file_id: Optional[str] = None
     backup_folder_id: Optional[str] = None
+    consolidated_file_id: Optional[str] = None
     rollback_executed: bool = False
 
     # Counters
@@ -56,6 +57,9 @@ class ExecutionReport:
         return self.status not in ("SUCCESS", "NO_FILES")
 
     def to_template_vars(self) -> dict:
+        consolidated_link = ""
+        if self.consolidated_file_id:
+            consolidated_link = f"https://drive.google.com/file/d/{self.consolidated_file_id}/view"
         return {
             "run_id": self.run_id,
             "timestamp": self.timestamp.strftime("%Y-%m-%d %H:%M:%S UTC"),
@@ -64,6 +68,7 @@ class ExecutionReport:
             "total_registros": self.source_row_count,
             "errores_validacion": self._build_error_rows_html(),
             "error_detalle": "; ".join(e.get("error", "") for e in self.validation_errors[:5]),
+            "link_consolidado": consolidated_link,
         }
 
     def _build_error_rows_html(self) -> str:

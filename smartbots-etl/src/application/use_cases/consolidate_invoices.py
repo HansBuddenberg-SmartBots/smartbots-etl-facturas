@@ -120,6 +120,7 @@ class ConsolidateInvoicesUseCase:
             # Crear backup del consolidado en Respaldo/yyyy-mm-dd/hh.mi.ss/
             backup_folder_id = self.lifecycle.backup_consolidated(consolidated_file_id, run_id)
             report.backup_folder_id = backup_folder_id
+            report.consolidated_file_id = consolidated_file_id
 
             # Inicializar transformer de filas
             transformer = RowTransformer(self.config.excel)
