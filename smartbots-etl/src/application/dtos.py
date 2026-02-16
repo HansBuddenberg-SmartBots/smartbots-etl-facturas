@@ -61,15 +61,9 @@ class ExecutionReport:
             "timestamp": self.timestamp.strftime("%Y-%m-%d %H:%M:%S UTC"),
             "archivos_procesados": self.total_files,
             "registros_insertados": self.inserted_count,
-            "registros_actualizados": self.updated_count,
-            "registros_sin_cambios": self.unchanged_count,
-            "total_monto_origen": f"${self.source_total_amount:,.0f}",
-            "total_monto_destino": f"${self.output_total_amount:,.0f}",
-            "varianza": f"${self.amount_variance:,.0f}",
+            "total_registros": self.source_row_count,
             "errores_validacion": self._build_error_rows_html(),
-            "error_tipo": self.status,
             "error_detalle": "; ".join(e.get("error", "") for e in self.validation_errors[:5]),
-            "rollback_ejecutado": "Sí" if self.rollback_executed else "No",
         }
 
     def _build_error_rows_html(self) -> str:

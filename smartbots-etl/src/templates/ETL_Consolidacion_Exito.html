@@ -42,19 +42,11 @@
               <p><strong>Ejecución:</strong> {run_id}<br>
               <strong>Fecha:</strong> {timestamp}</p>
 
-              <p><strong>Archivos procesados:</strong></p>
-              <ul>
-                {archivos_procesados}
-              </ul>
-
               <table class="summary-table">
                 <tr><th>Métrica</th><th>Valor</th></tr>
+                <tr><td>Archivos procesados</td><td>{archivos_procesados}</td></tr>
                 <tr><td>Registros insertados</td><td>{registros_insertados}</td></tr>
-                <tr><td>Registros actualizados</td><td>{registros_actualizados}</td></tr>
-                <tr><td>Registros sin cambios</td><td>{registros_sin_cambios}</td></tr>
-                <tr><td>Total monto origen</td><td>{total_monto_origen}</td></tr>
-                <tr><td>Total monto destino</td><td>{total_monto_destino}</td></tr>
-                <tr><td>Varianza</td><td>{varianza}</td></tr>
+                <tr><td>Total registros</td><td>{total_registros}</td></tr>
               </table>
 
               <p>Quedamos atentos a sus comentarios.</p>
