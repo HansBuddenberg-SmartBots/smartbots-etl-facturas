@@ -1,5 +1,5 @@
 # ============================================================
-# Configuración ETL Consolidación de Facturas — Santa Elena
+# Configuración ETL Consolidación de Facturas - Santa Elena
 # ============================================================
 
 # === Google APIs ===
@@ -9,27 +9,30 @@ google:
 
 # === Rutas en Google Drive ===
 drive:
-  source_path: "Bot RPA/Tocornal Export/Operaciones/ETL Facturas"
+  source_path: "Bot RPA/Operaciones/Consolidacion facturas"  # Carpeta principal donde se encuentran los archivos de facturas
   in_process_folder: "En Proceso"          # Subcarpeta dentro de source_path
   backup_path: "Respaldo"                  # Subcarpeta dentro de source_path
-  consolidated_path: "Bot RPA/Tocornal Export/Operaciones/ETL Facturas/Consolidado"
+  consolidated_path: "Bot RPA/Operaciones/Consolidacion facturas/Consolidado"
   consolidated_filename: "CONSOLIDADO DE FACTURAS.xlsx"
 
 # === Excel ===
 excel:
-  header_row: 11
-  data_start_row: 12
+  header_row: 6
+  data_start_row: 7
   source_sheet: "DETALLE FACTURACIÓN CONTENEDORE"
-  # Validación deshabilitada por ahora - se usa calamine
   skip_schema_validation: true
-  # Columnas reales del archivo EJEMPLO
   column_mapping:
+    "N° Factura": "invoice_number"
     "Empresa Transporte": "carrier_name"
-    "Nave": "vessel_name"
-    "Órdenes de Embarque": "booking_number"
-    "Guías de Despacho": "dispatch_numbers"
+    "Nave": "ship_name"
+    "Órdenes de Embarque": "reference_number"
+    "Guías de Despacho": "dispatch_guides"
     "Total Servicio ($)": "total_amount"
     "Fecha Emisión": "invoice_date"
+    "Fecha Recepción Digital": "fecha_recepcion_digital"
+    "Aprobado por:": "aprobado_por"
+    "Estado Operaciones": "estado_operaciones"
+    "Fecha Aprobación Operaciones": "fecha_aprobacion_operaciones"
   consolidated_sheet: "CONTROL FACTURAS"
 
 # === Email (Gmail API) ===
@@ -50,8 +53,12 @@ email:
 tracking:
   db_path: "data/etl_tracking.db"
 
+# === Descargas locales ===
+downloads:
+  temp_path: "downloads"  # Ruta para archivos temporales descargados
+
 # === Logging ===
 logging:
-  level: "INFO"
+  level: "DEBUG"  # Cambiar a INFO en producción
   log_to_file: true
   log_dir: "logs"

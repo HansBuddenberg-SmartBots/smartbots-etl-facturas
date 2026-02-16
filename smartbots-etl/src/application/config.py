@@ -28,31 +28,35 @@ class DrivePathsConfig:
 class ExcelConfig:
     source_sheet: str = "Sheet1"
     consolidated_sheet: str = "Consolidado"
-    header_row: int = 11
-    data_start_row: int = 12
+    header_row: int = 6
+    data_start_row: int = 7
     skip_schema_validation: bool = False
     expected_columns: tuple[str, ...] = (
         "N° Factura",
-        "N° Referencia",
-        "Transportista",
-        "Fecha Factura",
-        "Descripción",
-        "Monto Neto",
-        "IVA",
-        "Monto Total",
-        "Moneda",
+        "Empresa Transporte",
+        "Nave",
+        "Órdenes de Embarque",
+        "Guías de Despacho",
+        "Total Servicio ($)",
+        "Fecha Emisión",
+        "Fecha Recepción Digital",
+        "Aprobado por:",
+        "Estado Operaciones",
+        "Fecha Aprobación Operaciones",
     )
     column_mapping: dict[str, str] = field(
         default_factory=lambda: {
             "N° Factura": "invoice_number",
-            "N° Referencia": "reference_number",
-            "Transportista": "carrier_name",
-            "Fecha Factura": "invoice_date",
-            "Descripción": "description",
-            "Monto Neto": "net_amount",
-            "IVA": "tax_amount",
-            "Monto Total": "total_amount",
-            "Moneda": "currency",
+            "Empresa Transporte": "carrier_name",
+            "Nave": "ship_name",
+            "Órdenes de Embarque": "reference_number",
+            "Guías de Despacho": "dispatch_guides",
+            "Total Servicio ($)": "total_amount",
+            "Fecha Emisión": "invoice_date",
+            "Fecha Recepción Digital": "fecha_recepcion_digital",
+            "Aprobado por:": "aprobado_por",
+            "Estado Operaciones": "estado_operaciones",
+            "Fecha Aprobación Operaciones": "fecha_aprobacion_operaciones",
         }
     )
     date_format: str = "%d-%m-%Y"
@@ -81,6 +85,13 @@ class LoggingConfig:
 
 
 @dataclass(frozen=True)
+class DownloadsConfig:
+    """Configuración para descargas locales temporales."""
+
+    temp_path: str = "data/downloads"
+
+
+@dataclass(frozen=True)
 class AppConfig:
     google: GoogleConfig
     drive: DrivePathsConfig
@@ -88,6 +99,7 @@ class AppConfig:
     email: EmailConfig
     tracking: TrackingConfig
     logging: LoggingConfig
+    downloads: DownloadsConfig
 
 
 def load_config(config_path: str | Path) -> AppConfig:
@@ -114,6 +126,7 @@ def load_config(config_path: str | Path) -> AppConfig:
         email=_build_email_config(raw.get("email", {})),
         tracking=TrackingConfig(**raw.get("tracking", {})),
         logging=LoggingConfig(**raw.get("logging", {})),
+        downloads=DownloadsConfig(**raw.get("downloads", {})),
     )
 
 
