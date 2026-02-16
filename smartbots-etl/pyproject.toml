@@ -13,6 +13,7 @@ dependencies = [
     "pyyaml>=6.0.3",
     "pydantic>=2.12.5",
     "fastexcel>=0.8.0",
+    "pyarrow>=10.0.0",
 ]
 
 [project.optional-dependencies]
@@ -23,6 +24,7 @@ dev = [
     "ruff>=0.9",
     "mypy>=1.14",
     "pandas-stubs>=2.2",
+    "debugpy>=1.8.20",
 ]
 
 [build-system]
@@ -48,3 +50,8 @@ markers = ["integration: tests que requieren I/O real"]
 [tool.mypy]
 python_version = "3.12"
 strict = true
+
+[dependency-groups]
+dev = [
+    "debugpy>=1.8.20",
+]
