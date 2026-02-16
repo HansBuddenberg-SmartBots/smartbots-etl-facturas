@@ -31,12 +31,20 @@ class InvoiceRecord:
 
     # === Campos de negocio ===
     carrier_name: str
+    ship_name: str
+    dispatch_guides: str
     invoice_date: date
     description: str
     net_amount: Decimal
     tax_amount: Decimal
     total_amount: Decimal
     currency: str = "CLP"
+
+    # === Campos adicionales del consolidado ===
+    fecha_recepcion_digital: str = ""
+    aprobado_por: str = ""
+    estado_operaciones: str = ""
+    fecha_aprobacion_operaciones: str = ""
 
     # === Metadatos de procesamiento (no son clave primaria) ===
     source_file: Optional[str] = None
@@ -49,6 +57,9 @@ class InvoiceRecord:
             raise ValueError("invoice_number no puede estar vacío")
         if not self.reference_number or not self.reference_number.strip():
             raise ValueError("reference_number no puede estar vacío")
+        if not self.carrier_name or not self.carrier_name.strip():
+            raise ValueError("carrier_name no puede estar vacío")
+        # ship_name y dispatch_guides son opcionales (pueden estar vacíos)
         if self.total_amount < 0:
             raise ValueError(f"total_amount no puede ser negativo: {self.total_amount}")
         # Validación cruzada: total ≈ net + tax
@@ -70,12 +81,18 @@ class InvoiceRecord:
             invoice_number=self.invoice_number,
             reference_number=self.reference_number,
             carrier_name=self.carrier_name,
+            ship_name=self.ship_name,
+            dispatch_guides=self.dispatch_guides,
             invoice_date=self.invoice_date,
             description=self.description,
             net_amount=self.net_amount,
             tax_amount=self.tax_amount,
             total_amount=self.total_amount,
             currency=self.currency,
+            fecha_recepcion_digital=self.fecha_recepcion_digital,
+            aprobado_por=self.aprobado_por,
+            estado_operaciones=self.estado_operaciones,
+            fecha_aprobacion_operaciones=self.fecha_aprobacion_operaciones,
             source_file=self.source_file,
             processed_at=self.processed_at,
             status=new_status,
@@ -85,6 +102,8 @@ class InvoiceRecord:
         """Compara campos de negocio (ignora metadatos)."""
         return (
             self.carrier_name != other.carrier_name
+            or self.ship_name != other.ship_name
+            or self.dispatch_guides != other.dispatch_guides
             or self.invoice_date != other.invoice_date
             or self.net_amount != other.net_amount
             or self.tax_amount != other.tax_amount
