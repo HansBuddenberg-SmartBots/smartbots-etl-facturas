@@ -15,7 +15,7 @@ COLUMN_FORMATS = {
     "N° Factura": {"number_format": "0", "alignment": Alignment(horizontal="center")},
     "Empresa Transporte": {"alignment": Alignment(horizontal="center")},
     "Nave": {"alignment": Alignment(horizontal="center")},
-    "Órdenes de Embarque": {"alignment": Alignment(horizontal="center")},
+    "Órdenes de Embarque": {"alignment": Alignment(horizontal="left")},
     "Guías de Despacho": {"number_format": "0", "alignment": Alignment(horizontal="right")},
     "Total Servicio ($)": {"number_format": '_ "$"* #,##0_ ;_ "$"* \-#,##0_ ;_ "$"* "-"_ ;_ @_ '},
     "Fecha Emisión": {"number_format": "dd/mm/yyyy", "alignment": Alignment(horizontal="center")},

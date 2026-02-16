@@ -609,7 +609,7 @@ class ConsolidateInvoicesUseCase:
                     "Órdenes de Embarque": r.reference_number,
                     "Guías de Despacho": r.dispatch_guides,
                     "Total Servicio ($)": float(r.total_amount),
-                    "Fecha Emisión": r.invoice_date.isoformat(),
+                    "Fecha Emisión": r.invoice_date,
                     "Fecha Recepción Digital": r.fecha_recepcion_digital,
                     "Aprobado por:": r.aprobado_por,
                     "Estado Operaciones": r.estado_operaciones,
