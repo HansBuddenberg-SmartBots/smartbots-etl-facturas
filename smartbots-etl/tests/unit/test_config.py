@@ -111,10 +111,24 @@ class TestLoadConfig:
 class TestExcelConfigDefaults:
     def test_default_expected_columns(self):
         config = ExcelConfig()
-        assert len(config.expected_columns) == 9
+        assert len(config.expected_columns) == 11
         assert "N° Factura" in config.expected_columns
+        assert "Nave" in config.expected_columns
+        assert "Guías de Despacho" in config.expected_columns
+        assert "Fecha Recepción Digital" in config.expected_columns
+        assert "Aprobado por:" in config.expected_columns
+        assert "Estado Operaciones" in config.expected_columns
+        assert "Fecha Aprobación Operaciones" in config.expected_columns
 
     def test_default_column_mapping(self):
         config = ExcelConfig()
         assert config.column_mapping["N° Factura"] == "invoice_number"
-        assert config.column_mapping["Monto Total"] == "total_amount"
+        assert config.column_mapping["Total Servicio ($)"] == "total_amount"
+        assert config.column_mapping["Nave"] == "ship_name"
+        assert config.column_mapping["Guías de Despacho"] == "dispatch_guides"
+        assert config.column_mapping["Fecha Recepción Digital"] == "fecha_recepcion_digital"
+        assert config.column_mapping["Aprobado por:"] == "aprobado_por"
+        assert config.column_mapping["Estado Operaciones"] == "estado_operaciones"
+        assert (
+            config.column_mapping["Fecha Aprobación Operaciones"] == "fecha_aprobacion_operaciones"
+        )

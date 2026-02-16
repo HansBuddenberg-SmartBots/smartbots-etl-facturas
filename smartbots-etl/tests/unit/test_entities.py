@@ -11,6 +11,8 @@ def _make_record(**overrides) -> InvoiceRecord:
         "invoice_number": "F-001",
         "reference_number": "GD-100",
         "carrier_name": "Alfa",
+        "ship_name": "Nave Alpha",
+        "dispatch_guides": "GD-001",
         "invoice_date": date(2026, 2, 1),
         "description": "Servicio",
         "net_amount": Decimal("10000"),

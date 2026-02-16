@@ -14,6 +14,7 @@ from src.application.config import (
     EmailConfig,
     TrackingConfig,
     LoggingConfig,
+    DownloadsConfig,
 )
 
 
@@ -35,6 +36,7 @@ def config():
         ),
         tracking=TrackingConfig(),
         logging=LoggingConfig(),
+        downloads=DownloadsConfig(),
     )
 
 
@@ -53,7 +55,7 @@ def mocks():
 
 class TestConsolidateInvoicesUseCase:
     def test_no_files_returns_no_files_status(self, config, mocks):
-        mocks["path_resolver"].resolve_path.return_value = "folder-id"
+        mocks["path_resolver"].ensure_path.return_value = "folder-id"
         mocks["drive"].find_file_in_folder.return_value = "consol-id"
         mocks["drive"].list_source_files.return_value = []
 
@@ -65,7 +67,7 @@ class TestConsolidateInvoicesUseCase:
         mocks["tracker"].start_run.assert_called_once()
 
     def test_always_sends_notification(self, config, mocks):
-        mocks["path_resolver"].resolve_path.side_effect = Exception("boom")
+        mocks["path_resolver"].ensure_path.side_effect = Exception("boom")
 
         uc = ConsolidateInvoicesUseCase(**mocks, config=config)
         report = uc.execute()
@@ -74,7 +76,7 @@ class TestConsolidateInvoicesUseCase:
         mocks["notifier"].send.assert_called_once()
 
     def test_rollback_on_fatal_exception(self, config, mocks):
-        mocks["path_resolver"].resolve_path.return_value = "folder-id"
+        mocks["path_resolver"].ensure_path.return_value = "folder-id"
         mocks["drive"].find_file_in_folder.return_value = "consol-id"
         mocks["drive"].list_source_files.return_value = [
             {"file_id": "id-1", "name": "test.xlsx", "modified_time": "2026-01-01"}
@@ -92,7 +94,7 @@ class TestConsolidateInvoicesUseCase:
         assert report.files_with_errors == ["test.xlsx"]
 
     def test_tracker_called_on_start(self, config, mocks):
-        mocks["path_resolver"].resolve_path.return_value = "folder-id"
+        mocks["path_resolver"].ensure_path.return_value = "folder-id"
         mocks["drive"].find_file_in_folder.return_value = "consol-id"
         mocks["drive"].list_source_files.return_value = []
 
@@ -103,7 +105,7 @@ class TestConsolidateInvoicesUseCase:
         mocks["tracker"].finish_run.assert_called()
 
     def test_consolidated_not_found_raises_error(self, config, mocks):
-        mocks["path_resolver"].resolve_path.return_value = "folder-id"
+        mocks["path_resolver"].ensure_path.return_value = "folder-id"
         mocks["drive"].find_file_in_folder.return_value = None
 
         uc = ConsolidateInvoicesUseCase(**mocks, config=config)

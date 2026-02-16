@@ -70,18 +70,22 @@ class TestRowTransform:
     def test_transforms_complete_row(self, transformer):
         row = {
             "N° Factura": "F-100",
-            "N° Referencia": "GD-200",
-            "Transportista": "  Beta  ",
-            "Fecha Factura": "15-02-2026",
-            "Descripción": "Transporte",
-            "Monto Neto": "10000",
-            "IVA": "1900",
-            "Monto Total": "11900",
-            "Moneda": "clp",
+            "Empresa Transporte": "  Beta  ",
+            "Nave": "Nave Beta",
+            "Órdenes de Embarque": "GD-200",
+            "Guías de Despacho": "GD-001",
+            "Total Servicio ($)": "11900",
+            "Fecha Emisión": "15-02-2026",
+            "Fecha Recepción Digital": "",
+            "Aprobado por:": "",
+            "Estado Operaciones": "",
+            "Fecha Aprobación Operaciones": "",
         }
         record = transformer.transform_row(row, "test.xlsx")
         assert record.invoice_number == "F-100"
         assert record.carrier_name == "Beta"
-        assert record.currency == "CLP"
-        assert record.net_amount == Decimal("10000")
+        assert record.ship_name == "Nave Beta"
+        assert record.reference_number == "GD-200"
+        assert record.dispatch_guides == "GD-001"
+        assert record.total_amount == Decimal("11900")
         assert record.source_file == "test.xlsx"
