@@ -47,7 +47,7 @@ class TabularRow(BaseModel):
     patente_carro: str | None = Field(None, alias="Patente Carro")
     ordenes_embarque: str | None = Field(None, alias="Órdenes de Embarque")
     plantas: str | None = Field(None, alias="Plantas")
-    guias_despacho: str | None = Field(None, alias="Guías de Despacho")
+    guias_despacho: str | int | float | None = Field(None, alias="Guías de Despacho")
     cantidad_pallets: Any | None = Field(None, alias="Cantidad Pallets")
     flete: Decimal | None = Field(None, alias="Flete($)")
     underslung: Decimal | None = Field(None, alias="Underslung($)")
@@ -78,8 +78,8 @@ class OfficialFormatExtractor:
         "C6": "empresa_transporte",
         "G3": "fecha_emision",
         "C8": "numero_factura",
-        "G6": "nave",
-        "G7": "puerto_embarque",
+        "H6": "nave",
+        "H7": "puerto_embarque",
         "F4": "responsable",  # Tiene "Aprobado por: " prefix
     }
 
@@ -90,12 +90,29 @@ class OfficialFormatExtractor:
 
     def extract(self, file_path: Path) -> list[InvoiceRecord]:
         """Extrae registros del archivo con formato oficial o formato simple tabular."""
+        logger.debug(
+            "debug_extract_start",
+            file=str(file_path),
+            sheet=self._source_sheet,
+        )
+        logger.debug(f"\n{'=' * 60}")
+        logger.debug(f"DEBUG OfficialFormatExtractor.extract():")
+        logger.debug(f"  → Archivo: {file_path.name}")
+        logger.debug(f"  → Hoja configurada: {self._source_sheet}")
+
         self.validation_errors = []
         try:
             fixed = self._read_fixed_cells(file_path)
+            logger.debug(f"  → Celdas fijas leídas:")
+            logger.debug(f"      - Empresa Transporte: {fixed.empresa_transporte}")
+            logger.debug(f"      - N° Factura: {fixed.numero_factura}")
+            logger.debug(f"      - Nave: {fixed.nave}")
 
             is_mixed_format = (
                 fixed.numero_factura is not None and fixed.empresa_transporte is not None
+            )
+            logger.debug(
+                f"  → Formato detectado: {'MIXTO' if is_mixed_format else 'TABULAR SIMPLE'}"
             )
 
             if is_mixed_format:
@@ -111,6 +128,15 @@ class OfficialFormatExtractor:
         """Extrae registros usando formato mixto (celdas fijas + tabular)."""
         df = self._read_with_engine(file_path)
 
+        logger.debug(
+            "debug_dataframe_read",
+            file=file_path.name,
+            rows=len(df),
+            columns=len(df.columns),
+        )
+        logger.debug(f"  → DataFrame leído: {len(df)} filas, {len(df.columns)} columnas")
+        logger.debug(f"  → Columnas: {list(df.columns)[:10]}...")  # Primeras 10 columnas
+
         # Validar que las celdas clave tienen valores no nulos
         if (
             not fixed.numero_factura
@@ -124,9 +150,25 @@ class OfficialFormatExtractor:
             )
 
         records = []
+        ordenes_column = "Órdenes de Embarque"
+
+        logger.info(
+            "debug_columns_check",
+            file=file_path.name,
+            columns=list(df.columns),
+            ordenes_column_exists=ordenes_column in df.columns,
+        )
+
         for idx, row in df.iterrows():
             try:
                 if row.isna().all():
+                    continue
+
+                # Solo procesar filas que tengan valor en "Órdenes de Embarque"
+                ordenes_val = row.get(ordenes_column) if ordenes_column in row.index else None
+                if pd.isna(ordenes_val) or (
+                    isinstance(ordenes_val, str) and not ordenes_val.strip()
+                ):
                     continue
 
                 row_values_str = " ".join([str(v).upper() for v in row.values if not pd.isna(v)])
@@ -144,12 +186,18 @@ class OfficialFormatExtractor:
                     invoice_number=str(fixed.numero_factura),
                     reference_number=tabular.ordenes_embarque or "N/A",
                     carrier_name=str(fixed.empresa_transporte),
+                    ship_name=str(fixed.nave) if fixed.nave else "",
+                    dispatch_guides=str(tabular.guias_despacho) if tabular.guias_despacho else "",
                     invoice_date=self._parse_date(fixed.fecha_emision),
                     description=self._build_description(tabular, fixed),
                     net_amount=total,
                     tax_amount=Decimal("0"),
                     total_amount=total,
                     currency="CLP",
+                    fecha_recepcion_digital="",
+                    aprobado_por="",
+                    estado_operaciones="",
+                    fecha_aprobacion_operaciones="",
                     source_file=file_path.name,
                 )
                 records.append(record)
@@ -185,11 +233,16 @@ class OfficialFormatExtractor:
         )
 
         if not records:
-            raise SchemaValidationError(
-                missing_columns=["datos tabulares válidos"],
-                extra_columns=[],
+            logger.warning(
+                "no_records_extracted",
+                file=file_path.name,
+                reason="No se encontraron filas con 'Órdenes de Embarque' con valor",
             )
+            return []
 
+        logger.debug("debug_extraction_mixed_complete", records=len(records))
+        logger.debug(f"  → Registros extraídos (formato mixto): {len(records)}")
+        logger.debug(f"{'=' * 60}\n")
         return records
 
     def _extract_simple_tabular(self, file_path: Path) -> list[InvoiceRecord]:
@@ -197,8 +250,19 @@ class OfficialFormatExtractor:
         df = self._read_tabular_data(file_path)
 
         records = []
+        invoice_column = "N° Factura"
+
         for idx, row in df.iterrows():
             try:
+                # Detectar fin de datos: si "N° Facturas" está vacío, detener extracción
+                if invoice_column in row.index:
+                    invoice_val = row.get(invoice_column)
+                    if pd.isna(invoice_val) or (
+                        isinstance(invoice_val, str) and not invoice_val.strip()
+                    ):
+                        logger.debug("debug_stop_extraction_empty_invoice", row_index=int(idx))
+                        break
+
                 if row.isna().all():
                     continue
 
@@ -223,12 +287,18 @@ class OfficialFormatExtractor:
                     invoice_number=invoice_number,
                     reference_number=str(row.get("N° Referencia")) or "N/A",
                     carrier_name=str(row.get("Transportista", "")),
+                    ship_name=str(row.get("Nave", "")),
+                    dispatch_guides=str(row.get("Guías de Despacho", "")),
                     invoice_date=self._parse_date(row.get("Fecha Factura")),
                     description=str(row.get("Descripción", "")),
                     net_amount=net,
                     tax_amount=tax,
                     total_amount=total,
                     currency=str(row.get("Moneda", "CLP")),
+                    fecha_recepcion_digital=str(row.get("Fecha Recepción Digital", "")),
+                    aprobado_por=str(row.get("Aprobado por:", "")),
+                    estado_operaciones=str(row.get("Estado Operaciones", "")),
+                    fecha_aprobacion_operaciones=str(row.get("Fecha Aprobación Operaciones", "")),
                     source_file=file_path.name,
                 )
                 records.append(record)
@@ -250,6 +320,9 @@ class OfficialFormatExtractor:
             records_found=len(records),
         )
 
+        logger.debug("debug_extraction_simple_complete", records=len(records))
+        logger.debug(f"  → Registros extraídos (formato simple): {len(records)}")
+        logger.debug(f"{'=' * 60}\n")
         return records
 
     def _read_tabular_data(self, file_path: Path) -> pd.DataFrame:
@@ -280,17 +353,67 @@ class OfficialFormatExtractor:
 
     def _read_with_engine(self, file_path: Path) -> pd.DataFrame:
         """Lee el archivo usando el mejor engine disponible."""
-        # Intentar con calamine primero (más rápido)
         try:
             import fastexcel
 
-            # fastexcel lee todo como string para evitar problemas de tipos
             reader = fastexcel.read_excel(file_path)
-            # API de fastexcel: load_sheet_by_name
             df = reader.load_sheet_by_name(self._source_sheet).to_pandas()
-            # Saltar filas de encabezados fijos (1-10) y la fila de columnas (11)
-            df = df.iloc[11:] if len(df) > 11 else df
-            df = df.reset_index(drop=True)
+
+            # Debug: mostrar contenido de filas clave para identificar estructura
+            logger.info(
+                "fastexcel_structure_debug",
+                file=file_path.name,
+                raw_rows=len(df),
+                row_9=list(df.iloc[9])[:8] if len(df) > 9 else [],
+                row_10=list(df.iloc[10])[:8] if len(df) > 10 else [],
+                row_11=list(df.iloc[11])[:8] if len(df) > 11 else [],
+            )
+
+            # Buscar la fila que tiene "Órdenes de Embarque" como nombre de columna
+            # NOTA: Buscamos específicamente "Órdenes de Embarque" porque "Puerto Embarque"
+            # también contiene "Embarque" pero no es el header de la tabla de datos
+            header_row_idx = None
+            for idx in range(min(15, len(df))):
+                row_values = [str(v) for v in df.iloc[idx] if pd.notna(v)]
+                # Buscar específicamente "Órdenes de Embarque" o múltiples columnas de datos
+                if any("Órdenes de Embarque" in v for v in row_values):
+                    header_row_idx = idx
+                    logger.info("header_found", row_index=idx, sample=row_values[:8])
+                    break
+                # También buscar si hay varias columnas conocidas (Fecha Servicio, Unidad, etc.)
+                known_headers = {
+                    "Fecha Servicio",
+                    "Unidad",
+                    "Conductor",
+                    "Contenedor",
+                    "Órdenes de Embarque",
+                }
+                if len(known_headers.intersection(set(row_values))) >= 3:
+                    header_row_idx = idx
+                    logger.info(
+                        "header_found_by_known_columns", row_index=idx, sample=row_values[:8]
+                    )
+                    break
+
+            if header_row_idx is not None:
+                df = df.iloc[header_row_idx:]
+                df.columns = df.iloc[0].astype(str).tolist()
+                df = df[1:].reset_index(drop=True)
+            elif len(df) > 10:
+                df = df.iloc[10:]
+                df.columns = df.iloc[0].astype(str).tolist()
+                df = df[1:].reset_index(drop=True)
+            else:
+                df = df.reset_index(drop=True)
+
+            logger.info(
+                "fastexcel_processed",
+                file=file_path.name,
+                rows=len(df),
+                columns=list(df.columns)[:10],
+                ordenes_exists="Órdenes de Embarque" in df.columns,
+            )
+
             logger.debug("used_fastexcel_engine")
             return df
         except ImportError:
@@ -345,8 +468,8 @@ class OfficialFormatExtractor:
             "C6": _to_str(ws["C6"].value),
             "G3": _to_str(ws["G3"].value),
             "C8": _to_str(ws["C8"].value),
-            "G6": _to_str(ws["G6"].value),
-            "G7": _to_str(ws["G7"].value),
+            "G6": _to_str(ws["H6"].value),
+            "G7": _to_str(ws["H7"].value),
             "F4": _to_str(ws["F4"].value),
         }
 
@@ -371,23 +494,7 @@ class OfficialFormatExtractor:
         return sum(components, Decimal("0"))
 
     def _build_description(self, row: TabularRow, fixed: FixedCells) -> str:
-        """Construye descripción completa con datos operativos."""
-        parts = []
-
-        if row.contenedor:
-            parts.append(f"Cont: {row.contenedor}")
-        if row.unidad:
-            parts.append(f"Unidad: {row.unidad}")
-        if row.conductor:
-            parts.append(f"Conductor: {row.conductor}")
-        if fixed.nave:
-            parts.append(f"Nave: {fixed.nave}")
-        if row.plantas:
-            parts.append(f"Planta: {row.plantas}")
-        if row.observaciones:
-            parts.append(f"Obs: {row.observaciones}")
-
-        return " | ".join(parts) if parts else ""
+        return str(row.observaciones) if row.observaciones else ""
 
     def _parse_date(self, value: Any) -> date:
         """Parsea fecha manejando strings, datetimes y timestamps."""
