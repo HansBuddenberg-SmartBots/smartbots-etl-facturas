@@ -1,11 +1,14 @@
+from copy import copy
 from pathlib import Path
+import tempfile
+import zipfile
 
 import openpyxl
 import pandas as pd
 import structlog
-
+from openpyxl.drawing.image import Image
 from openpyxl.styles import Alignment
-from copy import copy
+from openpyxl.worksheet.worksheet import Worksheet
 
 logger = structlog.get_logger()
 
@@ -17,7 +20,7 @@ COLUMN_FORMATS = {
     "Nave": {"alignment": Alignment(horizontal="center")},
     "Órdenes de Embarque": {"alignment": Alignment(horizontal="left")},
     "Guías de Despacho": {"number_format": "0", "alignment": Alignment(horizontal="right")},
-    "Total Servicio ($)": {"number_format": '_ "$"* #,##0_ ;_ "$"* \-#,##0_ ;_ "$"* "-"_ ;_ @_ '},
+    "Total Servicio ($)": {"number_format": r'_ "$"* #,##0_ ;_ "$"* \-#,##0_ ;_ "$"* "-"_ ;_ @_ '},
     "Fecha Emisión": {"number_format": "dd/mm/yyyy", "alignment": Alignment(horizontal="center")},
     "Fecha Recepción Digital": {
         "number_format": "dd/mm/yyyy",
@@ -68,6 +71,8 @@ class OpenpyxlExcelHandler:
             logger.info("excel_created", path=str(file_path), rows=len(df))
             return
 
+        images = self._extract_images(file_path)
+
         wb = openpyxl.load_workbook(file_path)
         try:
             if sheet_name not in wb.sheetnames:
@@ -88,7 +93,7 @@ class OpenpyxlExcelHandler:
                 for col_idx, value in enumerate(row, start=1):
                     cell = ws.cell(row=row_idx, column=col_idx)
 
-                    col_name = column_names[col_idx - 1] if col_idx <= len(column_names) else None
+                    col_name = column_names[col_idx - 1] if col_idx <= len(column_names) else ""
 
                     if col_name == "N° Factura" and value is not None:
                         try:
@@ -124,8 +129,10 @@ class OpenpyxlExcelHandler:
         finally:
             wb.close()
 
+        self._reinsert_images(file_path, sheet_name, images)
+
     @staticmethod
-    def _find_next_empty_row(ws, min_row: int) -> int:
+    def _find_next_empty_row(ws: Worksheet, min_row: int) -> int:
         """Encuentra la siguiente fila vacía, respetando min_row."""
         if ws.max_row < min_row:
             return min_row
@@ -174,3 +181,53 @@ class OpenpyxlExcelHandler:
             extra=extra,
         )
         return is_valid, missing, extra
+
+    @staticmethod
+    def _extract_images(file_path: Path) -> list[dict]:
+        """Extrae imágenes de un archivo XLSX antes de modificarlo."""
+        images = []
+        try:
+            with zipfile.ZipFile(file_path, "r") as zf:
+                media_files = [f for f in zf.namelist() if f.startswith("xl/media/")]
+                for media_file in media_files:
+                    data = zf.read(media_file)
+                    images.append(
+                        {
+                            "path": media_file,
+                            "data": data,
+                            "filename": Path(media_file).name,
+                        }
+                    )
+            if images:
+                logger.info("images_extracted", count=len(images), source=str(file_path))
+        except Exception as e:
+            logger.warning("image_extraction_failed", error=str(e))
+        return images
+
+    @staticmethod
+    def _reinsert_images(file_path: Path, sheet_name: str, images: list[dict]) -> None:
+        """Reinserta imágenes en el archivo XLSX después de modificarlo."""
+        if not images:
+            return
+
+        try:
+            with tempfile.TemporaryDirectory() as tmpdir:
+                tmpdir = Path(tmpdir)
+                wb = openpyxl.load_workbook(file_path)
+
+                if sheet_name in wb.sheetnames:
+                    ws = wb[sheet_name]
+
+                    for img_info in images:
+                        img_path = tmpdir / img_info["filename"]
+                        img_path.write_bytes(img_info["data"])
+
+                        img = Image(img_path)
+                        #ws.add_image(img, "A1")
+
+                wb.save(file_path)
+                wb.close()
+
+            logger.info("images_reinserted", count=len(images), target=str(file_path))
+        except Exception as e:
+            logger.warning("image_reinsertion_failed", error=str(e))
